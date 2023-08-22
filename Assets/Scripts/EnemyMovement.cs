@@ -19,12 +19,4 @@ public class EnemyMovement : MonoBehaviour
         transform.LookAt(_targetPlayer.transform, Vector3.up);
         transform.Translate(Vector3.forward * Time.deltaTime * _speed);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }

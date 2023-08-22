@@ -7,6 +7,9 @@ TagManager:
   - ShipModule
   - Enemy
   - Bullet
+  - NeutralUnit
+  - Tree
+  - TargetPoint
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - TargetPoint
   - 
   - 
   - 

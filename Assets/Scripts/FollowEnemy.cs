@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FollowEnemy : MonoBehaviour
 {
-    private GameObject targetEnemy;
-
     [SerializeField]
     private GameObject _bulletPrefabs;
     private float shootingInterval;
@@ -20,18 +18,32 @@ public class FollowEnemy : MonoBehaviour
 
     void Update()
     {
-        targetEnemy = GameObject.Find("TargetPoint");
         DetectionByPlayer();
     }
 
     public void DetectionByPlayer()
     {
-        if (targetEnemy!=null)
+        float distanceClosest = Mathf.Infinity;
+        EnemyMovement enemyClosest = null;
+        EnemyMovement[] allEnemies = GameObject.FindObjectsOfType<EnemyMovement>();
+
+        foreach(EnemyMovement currentEnemy in allEnemies)
         {
-            float distance = Vector3.Distance(transform.position, targetEnemy.transform.position);
-            if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > 2f)
+            float distanceEnemyToPLayer = (currentEnemy.transform.position - transform.position).magnitude;
+            if (distanceEnemyToPLayer < distanceClosest)
             {
-                Vector3 direction = targetEnemy.transform.position - transform.position;
+                distanceClosest = distanceEnemyToPLayer;
+                enemyClosest = currentEnemy;
+            }
+        }
+
+        if (enemyClosest != null)
+        {
+            float distance = Vector3.Distance(transform.position, enemyClosest.transform.position);
+            Debug.Log(distance);
+            if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > 0.65f)
+            {
+                Vector3 direction = enemyClosest.transform.position - transform.position;
                 transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
                 Instantiate(_bulletPrefabs, _shootPoint.position, _shootPoint.rotation);

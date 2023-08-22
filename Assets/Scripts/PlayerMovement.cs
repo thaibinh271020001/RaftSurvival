@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private float _speed;
     private Rigidbody _rigidbody;
     public  Vector3 diretion;
+
+    [SerializeField]
+    private float pushForce; 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();   
@@ -22,5 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
         diretion = new Vector3(hInput, 0, vInput);
         _rigidbody.velocity = diretion*_speed; 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        /*if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            
+            if(enemyRigidbody != null)
+            {
+                Vector3 pushDirection = collision.contacts[0].point - transform.position;
+                enemyRigidbody.AddForce(pushDirection * pushForce,ForceMode.Impulse);
+            }
+        }*/
     }
 }

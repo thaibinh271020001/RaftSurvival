@@ -14,11 +14,6 @@ public class Shoot : MonoBehaviour
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))

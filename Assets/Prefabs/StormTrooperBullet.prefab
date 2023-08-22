@@ -50,6 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0
+  _health: {fileID: 0}
+  _damage: 0
 --- !u!136 &3888077885757162931
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _health: {fileID: 0}
+  _damage: 10
 --- !u!1 &5962131239492002112
 GameObject:
   m_ObjectHideFlags: 0
