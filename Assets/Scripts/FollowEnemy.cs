@@ -40,7 +40,6 @@ public class FollowEnemy : MonoBehaviour
         if (enemyClosest != null)
         {
             float distance = Vector3.Distance(transform.position, enemyClosest.transform.position);
-            Debug.Log(distance);
             if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > 0.65f)
             {
                 Vector3 direction = enemyClosest.transform.position - transform.position;

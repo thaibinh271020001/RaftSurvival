@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour
 {
     [SerializeField]
-    private Health _health;
+    private EnemyHealth _health;
     [SerializeField]
     private int _defaultBulletDamage;
 

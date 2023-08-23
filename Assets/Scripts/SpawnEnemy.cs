@@ -31,8 +31,6 @@ public class SpawnEnemy : MonoBehaviour
                 offset.y = 0;
                 Vector3 newOffset = transform.position + offset * Random.Range(15.2f, 15.20001f);
 
-                Debug.Log(offset);
-
                 Instantiate(_enemyPrefabs, newOffset, _enemyPrefabs.transform.rotation);
                 _timeInterval = Time.time;
             }

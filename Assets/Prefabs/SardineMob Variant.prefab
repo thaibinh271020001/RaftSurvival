@@ -416,6 +416,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 5373930194846746008}
   _defaultBulletDamage: 10
+--- !u!114 &8823089684574902892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124988568290782218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500263d8e56b5134f953b41ab80f39a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
 --- !u!1001 &7825613957107036400
 PrefabInstance:
   m_ObjectHideFlags: 0
