@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LeverManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     [SerializeField]
     private Slider _levelBar;
@@ -13,7 +13,9 @@ public class LeverManager : MonoBehaviour
     private float _pointExperience = 0;
     private float _maxLevelUpExperience = 100;
     private float _experienceIncrease = 1.1f;
-    
+
+    [SerializeField]
+    private GameObject _levelUI;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,8 +31,14 @@ public class LeverManager : MonoBehaviour
                 _currentLevel++;
                 _maxLevelUpExperience *= _experienceIncrease;
                 _levelText.text = "" + _currentLevel;
+                LevelUpUI();
             }
         }
+    }
 
+    public void LevelUpUI()
+    {
+        Time.timeScale = 0;
+        _levelUI.SetActive(true);
     }
 }
