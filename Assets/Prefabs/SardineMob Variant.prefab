@@ -406,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 10
   _experience: {fileID: 7827007612943581813}
+  _skull: {fileID: 377415590441862655, guid: e8fd39b5352ad39408fa5b7781868868, type: 3}
 --- !u!114 &8520197479458148490
 MonoBehaviour:
   m_ObjectHideFlags: 0

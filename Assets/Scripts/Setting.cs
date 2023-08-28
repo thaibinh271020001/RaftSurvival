@@ -7,6 +7,11 @@ public class Setting : MonoBehaviour
 {
     [SerializeField]
     private GameObject _setting;
+    
+    [SerializeField]
+    private GameObject _menu;
+    [SerializeField]
+    private GameObject _shop;
 
     public void SettingOn()
     {
@@ -22,6 +27,22 @@ public class Setting : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
+    }
+
+    public void CloseButtonInMenu()
+    {
+        _setting.SetActive(false);
+    }
+
+    public void CloseButtonShopToMenu()
+    {
+        _shop.SetActive(false);
+        _menu.SetActive(true);
+    }
+    public void CloseButtonMenuToShop()
+    {
+        _shop.SetActive(true);
+        _menu.SetActive(false);
     }
 }
