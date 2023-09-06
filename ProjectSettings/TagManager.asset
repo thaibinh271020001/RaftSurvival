@@ -10,6 +10,14 @@ TagManager:
   - NeutralUnit
   - Tree
   - TargetPoint
+  - LeftUnit
+  - RightUnit
+  - UpUnit
+  - DownUnit
+  - TankBullet
+  - FlameCollider
+  - AirPlaneCollider
+  - Unit
   layers:
   - Default
   - TransparentFX

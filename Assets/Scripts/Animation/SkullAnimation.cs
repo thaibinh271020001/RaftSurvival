@@ -6,15 +6,6 @@ public class SkullAnimation : MonoBehaviour
 {
     private Animator _mainAnimation;
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void Proe()
     {
         Destroy(gameObject);

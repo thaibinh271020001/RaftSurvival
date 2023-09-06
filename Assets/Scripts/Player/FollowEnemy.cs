@@ -11,6 +11,9 @@ public class FollowEnemy : MonoBehaviour
     private float _distanceDetectionByPlayer;
     [SerializeField]
     private Transform _shootPoint;
+
+    [SerializeField]
+    private float _delayShoot;
     void Start()
     {
         shootingInterval = Time.time;
@@ -40,7 +43,7 @@ public class FollowEnemy : MonoBehaviour
         if (enemyClosest != null)
         {
             float distance = Vector3.Distance(transform.position, enemyClosest.transform.position);
-            if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > 0.65f)
+            if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > _delayShoot)
             {
                 Vector3 direction = enemyClosest.transform.position - transform.position;
                 transform.rotation = Quaternion.LookRotation(direction, Vector3.up);

@@ -12,6 +12,10 @@ public class Setting : MonoBehaviour
     private GameObject _menu;
     [SerializeField]
     private GameObject _shop;
+    [SerializeField]
+    private GameObject _upgrade;
+    [SerializeField]
+    private GameObject _upgradeButton;
 
     public void SettingOn()
     {
@@ -30,6 +34,11 @@ public class Setting : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void SettingButtonMenu()
+    {
+        _setting.SetActive(true);
+    }
+
     public void CloseButtonInMenu()
     {
         _setting.SetActive(false);
@@ -44,5 +53,17 @@ public class Setting : MonoBehaviour
     {
         _shop.SetActive(true);
         _menu.SetActive(false);
+    }
+    public void CloseButtonUpgradeToMenu()
+    {
+        _upgrade.SetActive(false);
+        _menu.SetActive(true);
+        _upgradeButton.SetActive(true);
+    }
+    public void ButtonUpgrade()
+    {
+        _upgrade.SetActive(true);
+        _menu.SetActive(false);
+        _upgradeButton.SetActive(false);
     }
 }

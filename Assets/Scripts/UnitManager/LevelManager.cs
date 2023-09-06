@@ -17,9 +17,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _levelUI;
 
+    public static bool isUpgrade = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Experience")
+        if (other.gameObject.name == "Experience")
         {
             _pointExperience += 10;
             _levelBar.value = _pointExperience / _maxLevelUpExperience;

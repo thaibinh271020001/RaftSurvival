@@ -6,6 +6,9 @@ public class BulletShoot : MonoBehaviour
 {
     private GameObject enemy;
     private bool _detection = true;
+
+    [SerializeField]
+    private float _speedBullet;
     private void Update()
     {
         FindClosestEnemy();
@@ -31,7 +34,7 @@ public class BulletShoot : MonoBehaviour
             }
 
             Vector3 directionRotation = closestEnemies.transform.position - player.transform.position;
-            transform.position = Vector3.MoveTowards(transform.position, closestEnemies.transform.position, 0.05f);
+            transform.position = Vector3.MoveTowards(transform.position, closestEnemies.transform.position, _speedBullet);
             transform.rotation = Quaternion.LookRotation(directionRotation, Vector3.up);
 
         }

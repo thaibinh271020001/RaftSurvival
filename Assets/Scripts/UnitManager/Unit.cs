@@ -5,27 +5,24 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _upgradeGrid;
-    [SerializeField]
     private GameObject _tankModule;
-
-    //private GameObject _parent;
 
     public void ExpandUnit()
     {
+        LevelManager.isUpgrade = true;
         gameObject.SetActive(false);
         UpgradeGrid();
+        Time.timeScale = 1f;
     }
 
     public void UpgradeGrid()
     {
-        _upgradeGrid.SetActive(true);
+        //.SetActive(true);
     }
 
-    public void InstancetiateTankModule(Transform tankTranform)
+    /*public void InstancetiateTankModule(GameObject tankTranform)
     {
-        Instantiate(_tankModule,tankTranform.parent);
+        Instantiate(_tankModule,tankTranform.transform.position,transform.rotation,);
         Time.timeScale = 1;
-        _upgradeGrid.SetActive(false);
-    }
+    }*/
 }

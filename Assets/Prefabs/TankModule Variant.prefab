@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1408129029283379, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1467561651276869, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -26,6 +30,10 @@ PrefabInstance:
     - target: {fileID: 1545835235175237, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603056453934078, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1662708753664373, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
       propertyPath: m_IsActive
@@ -46,6 +54,10 @@ PrefabInstance:
     - target: {fileID: 1799953618001617, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886386341765750, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4899917050821557, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
       propertyPath: m_RootOrder
@@ -123,4 +135,158 @@ PrefabInstance:
     - {fileID: 114634962945747168, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
     - {fileID: 114195429117784108, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
     - {fileID: 114954728485549586, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+    - {fileID: 54726383658115433, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+--- !u!1 &6841733776313692647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1027482939460699, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7801947685490867579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841733776313692647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankModule: {fileID: 0}
+  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
+  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
+  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
+  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
+--- !u!1 &6842286268426708546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1603056453934078, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4476957978441735498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842286268426708546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bbed799fa0d744ca3b44a3c47da722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefabs: {fileID: 2858543188894625537, guid: 1654a839449f37e4f9832741bc73afa6, type: 3}
+  _distanceDetectionByPlayer: 7.5
+  _shootPoint: {fileID: 6845064600920247807}
+  _delayShoot: 0.65
+--- !u!1 &6842311579637186805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1645704526675273, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6891627639969798964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842311579637186805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankModule: {fileID: 0}
+  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
+  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
+  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
+  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
+--- !u!1 &6842469526269082511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1208520595899955, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1292077765372275633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842469526269082511}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a39df19d1bec704d8311dd54690b02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 0}
+--- !u!1 &6842649761755017312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1380260901227996, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1455866324465373052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842649761755017312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankModule: {fileID: 0}
+  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
+  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
+  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
+  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
+--- !u!1 &6842942061826223013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1721216312120857, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6954565021670136708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842942061826223013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankModule: {fileID: 0}
+  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
+  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
+  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
+  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
+--- !u!1 &6842961166564589589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1699912413003177, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2793658839563495807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842961166564589589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164975ad8fb404444b4a0aa6182fb80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _left: {fileID: 6841733776313692647}
+  _right: {fileID: 6842311579637186805}
+  _up: {fileID: 6842942061826223013}
+  _down: {fileID: 6842649761755017312}
+--- !u!4 &6845064600920247807 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4383889109119043, guid: 61c05b850ed4b044abb12e2de9b1d230, type: 3}
+  m_PrefabInstance: {fileID: 6841283270792363452}
+  m_PrefabAsset: {fileID: 0}

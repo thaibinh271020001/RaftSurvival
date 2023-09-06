@@ -47,6 +47,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1012457315448765, guid: 19630a72f0aa2994196aa7f088c9c61c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012457315448765, guid: 19630a72f0aa2994196aa7f088c9c61c, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -421,6 +425,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 5373930194846746008}
   _defaultBulletDamage: 10
+  _tankBulletDamage: 10
+  _flameDamage: 4
+  _airPlaneDamage: 5
 --- !u!114 &8823089684574902892
 MonoBehaviour:
   m_ObjectHideFlags: 0
