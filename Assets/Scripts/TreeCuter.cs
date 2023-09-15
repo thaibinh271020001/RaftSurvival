@@ -12,6 +12,7 @@ public class TreeCuter : MonoBehaviour
         if (other.gameObject.CompareTag("Tree"))
         {
             _anim.Play();
+            Destroy(other.gameObject);
         }
     }
 }

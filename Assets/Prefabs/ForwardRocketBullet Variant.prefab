@@ -112,7 +112,7 @@ CapsuleCollider:
   m_Height: 0.65
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.09}
---- !u!114 &8855104049698312482
+--- !u!114 &1245928499966007192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,11 +121,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7672004608930182649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4202296b5c82f4b8173df840c9a698, type: 3}
+  m_Script: {fileID: 11500000, guid: edb3e895a5a391349a635222120a04c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionRadius: 7
+  _explosionRadius: 6
   _explosionDamage: 5
   _particleSystem: {fileID: 8522209674431377325, guid: e2627ac2108a9d146a5c718f4e78b929, type: 3}
   _speed: 15
   _lifeTime: 4
+  _checkLevelRocketTurret: {fileID: 0}
+  _damageUI: {fileID: 0}

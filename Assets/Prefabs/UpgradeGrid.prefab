@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5717394756243615603}
   - component: {fileID: 6762296831225880976}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,8 +97,8 @@ GameObject:
   - component: {fileID: 5118399003678129408}
   - component: {fileID: 8333366541752178929}
   - component: {fileID: 4533758388095718747}
-  - component: {fileID: 7495128018422371033}
-  m_Layer: 3
+  - component: {fileID: 6196807215841698336}
+  m_Layer: 0
   m_Name: Down
   m_TagString: DownUnit
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!54 &4533758388095718747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7495128018422371033
+--- !u!114 &6196807215841698336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,11 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankModule: {fileID: 6842961166564589589, guid: 362a13c7016a4ed418921c33eabb10e0, type: 3}
-  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
-  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
-  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
-  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
 --- !u!1 &3098956599184634605
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7842227678295868831}
   - component: {fileID: 2453350162810701199}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,8 +309,8 @@ GameObject:
   - component: {fileID: 1769691156672761708}
   - component: {fileID: 8518405058929105939}
   - component: {fileID: 2816934014581220142}
-  - component: {fileID: 8326300172130108162}
-  m_Layer: 3
+  - component: {fileID: 7398193625265869886}
+  m_Layer: 0
   m_Name: Up
   m_TagString: UpUnit
   m_Icon: {fileID: 0}
@@ -400,7 +395,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!54 &2816934014581220142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -417,7 +412,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8326300172130108162
+--- !u!114 &7398193625265869886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -429,11 +424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankModule: {fileID: 6842961166564589589, guid: 362a13c7016a4ed418921c33eabb10e0, type: 3}
-  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
-  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
-  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
-  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
 --- !u!1 &5153012286815055275
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +437,8 @@ GameObject:
   - component: {fileID: 1696850231656722263}
   - component: {fileID: 8118374679669177298}
   - component: {fileID: 7146688467953197806}
-  - component: {fileID: 6820090212413036932}
-  m_Layer: 3
+  - component: {fileID: 5090972104606714377}
+  m_Layer: 0
   m_Name: Right
   m_TagString: RightUnit
   m_Icon: {fileID: 0}
@@ -533,7 +523,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!54 &7146688467953197806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -550,7 +540,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6820090212413036932
+--- !u!114 &5090972104606714377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -562,11 +552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankModule: {fileID: 6842961166564589589, guid: 362a13c7016a4ed418921c33eabb10e0, type: 3}
-  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
-  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
-  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
-  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
 --- !u!1 &5479878633262606185
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5181702686156049935}
   - component: {fileID: 838666522252726640}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1784444825460697611}
   - component: {fileID: -554850862484405237}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: UpgradeGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,8 +701,8 @@ GameObject:
   - component: {fileID: 7837863559677869162}
   - component: {fileID: 7179527302256377271}
   - component: {fileID: 3119509341218889880}
-  - component: {fileID: 4141681734253412106}
-  m_Layer: 3
+  - component: {fileID: 3276220842822515037}
+  m_Layer: 0
   m_Name: Left
   m_TagString: LeftUnit
   m_Icon: {fileID: 0}
@@ -802,7 +787,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!54 &3119509341218889880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -819,7 +804,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4141681734253412106
+--- !u!114 &3276220842822515037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -831,11 +816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929d398ff2dab4f4aa58d61f0cd936fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankModule: {fileID: 6842961166564589589, guid: 362a13c7016a4ed418921c33eabb10e0, type: 3}
-  _turretModule: {fileID: 1854976906882583453, guid: ce05f5408ef7ad7429f1631ecfbd6f51, type: 3}
-  _flameModule: {fileID: 6796730568302495434, guid: 2fbb92a20d6f43241b5f521eb842cc18, type: 3}
-  _airPlaneModule: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
-  _forwardRocketModule: {fileID: 5363520537790919748, guid: fcfd5b4b1178e41449c6a7b4b6c1dc75, type: 3}
 --- !u!1 &8960205489326586460
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2997796549833859034}
   - component: {fileID: 651695201979940914}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}

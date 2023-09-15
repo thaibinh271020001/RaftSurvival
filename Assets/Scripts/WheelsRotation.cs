@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class WheelsRotation : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerMovement _playerMovement;
+    private FloatingJoystick _floatingJoystick;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        _floatingJoystick = GameObject.Find("Floating Joystick").GetComponent<FloatingJoystick>();
+    }
+
     void Update()
     {
-        Vector3 directionRotate = _playerMovement.diretion;
+        float hInput = _floatingJoystick.Horizontal;
+        float vInput = _floatingJoystick.Vertical;
+
+        Vector3 directionRotate = new Vector3(hInput,0,vInput);
         if (directionRotate != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(directionRotate, Vector3.up);
+            transform.rotation = Quaternion.LookRotation(-directionRotate, Vector3.up);
         }
     }
 }

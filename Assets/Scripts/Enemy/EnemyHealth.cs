@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -11,11 +12,18 @@ public class EnemyHealth : MonoBehaviour
     private GameObject _experience;
     [SerializeField]
     private GameObject _skull;
+    [SerializeField]
+    private GameObject _enemy;
 
-    public void TakeDamage(int damage)
+    public static float _damgeTaken;
+
+    public void TakeDamage(float damage)
     {
         _health -= damage;
 
+        Debug.Log(damage);
+        _damgeTaken = damage;
+        Debug.Log(_health);
         if(_health <= 0)
         {
             Die();
@@ -24,19 +32,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Experience();
-        SkullAnimation();
-        Destroy(gameObject);
-    }
-
-    public void Experience()
-    {
-        _experience.SetActive(true);
-        _experience.transform.position = transform.position + new Vector3(0, 0.37f, 0);
-    }
-
-    public void SkullAnimation()
-    {
-        Instantiate(_skull, gameObject.transform.position + new Vector3(0,1.25f,0), _skull.transform.rotation);
+        Instantiate(_experience, gameObject.transform.position + new Vector3(0, 0.37f, 0), _experience.transform.rotation);
+        Instantiate(_skull, gameObject.transform.position + new Vector3(0, 1.25f, 0), _skull.transform.rotation);
+        Destroy(_enemy);
     }
 }

@@ -14,10 +14,14 @@ public class EnemyTakeDamage : MonoBehaviour
     private int _flameDamage;
     [SerializeField]
     private int _airPlaneDamage;
+    [SerializeField]
+    private int _lightingDamage;
 
 
     private float _timeInterval;
-    
+
+    [SerializeField]
+    private GameObject _damageUI;
 
     private void Start()
     {
@@ -28,27 +32,14 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         {
-            _health.TakeDamage(_defaultBulletDamage);
+            //_health.TakeDamage(DamageManager.DeafaultDamage());
+            DispayDamgageTaken();
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    public void DispayDamgageTaken()
     {
-        if (other.gameObject.CompareTag("FlameCollider"))
-        {
-            if(Time.time - _timeInterval > 0.3f)
-            {
-                _health.TakeDamage(_flameDamage);
-                _timeInterval = Time.time;
-            }
-        }
-        if (other.gameObject.CompareTag("AirPlaneCollider"))
-        {
-            if (Time.time - _timeInterval > 0.3f)
-            {
-                _health.TakeDamage(_airPlaneDamage);
-                _timeInterval = Time.time;
-            }
-        }
+        GameObject takeDamageUI = Instantiate(_damageUI, gameObject.transform.position + new Vector3(0,1.5f,0), _damageUI.transform.rotation);
+        Destroy(takeDamageUI, 0.5f);
     }
 }

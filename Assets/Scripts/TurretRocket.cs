@@ -26,8 +26,8 @@ public class TurretRocket : MonoBehaviour
 
         if (Time.time - _timeInterval > 1f)
         {
-            Instantiate(_rocketBullet, _shootPoint1.position,transform.rotation);
-            Instantiate(_rocketBullet, _shootPoint2.position,transform.rotation);
+            Instantiate(_rocketBullet, _shootPoint1.position,transform.rotation).SetActive(true);
+            Instantiate(_rocketBullet, _shootPoint2.position,transform.rotation).SetActive(true);
             _timeInterval = Time.time;
         }
     }

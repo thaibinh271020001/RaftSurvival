@@ -48,7 +48,7 @@ public class FollowEnemy : MonoBehaviour
                 Vector3 direction = enemyClosest.transform.position - transform.position;
                 transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
-                Instantiate(_bulletPrefabs, _shootPoint.position, _shootPoint.rotation);
+                Instantiate(_bulletPrefabs, _shootPoint.position, _shootPoint.rotation).SetActive(true);
                 shootingInterval = Time.time;
             }
         }

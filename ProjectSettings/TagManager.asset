@@ -18,6 +18,10 @@ TagManager:
   - FlameCollider
   - AirPlaneCollider
   - Unit
+  - Experience
+  - CardUpgrade
+  - LightingAttack
+  - TurretBullet
   layers:
   - Default
   - TransparentFX

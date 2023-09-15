@@ -17,6 +17,8 @@ public class Setting : MonoBehaviour
     [SerializeField]
     private GameObject _upgradeButton;
 
+
+
     public void SettingOn()
     {
         _setting.SetActive(true);
@@ -66,4 +68,6 @@ public class Setting : MonoBehaviour
         _menu.SetActive(false);
         _upgradeButton.SetActive(false);
     }
+
+    
 }

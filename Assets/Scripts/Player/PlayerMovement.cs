@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private Joystick _joystick;
-    [SerializeField]
-    private float _speed;
+    private FloatingJoystick _floatingJoystick;
+    
+    public float _speed;
     private Rigidbody _rigidbody;
     public  Vector3 diretion;
 
@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float hInput = _joystick.Horizontal;
-        float vInput = _joystick.Vertical;
+        float hInput = _floatingJoystick.Horizontal;
+        float vInput = _floatingJoystick.Vertical;
 
         diretion = new Vector3(hInput, 0, vInput);
         _rigidbody.velocity = diretion*_speed; 

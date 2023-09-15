@@ -10,8 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private GameObject bullet;
     void Start()
     {
-        _targetPlayer = GameObject.Find("SoldierModulePoint");
-        bullet = GameObject.FindGameObjectWithTag("Bullet");
+        _targetPlayer = GameObject.Find("PlayerPoint");
     }
 
     void Update()
