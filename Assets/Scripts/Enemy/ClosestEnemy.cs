@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClosestEnemy : MonoBehaviour
 {
     private float distance;
+
     public float DetectionByPlayer(Transform transform)
     {
         float distanceClosest = Mathf.Infinity;
@@ -32,4 +33,5 @@ public class ClosestEnemy : MonoBehaviour
 
         return distance;
     }
+
 }

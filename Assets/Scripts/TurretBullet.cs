@@ -16,6 +16,8 @@ public class TurretBullet : MonoBehaviour
     private CheckLevelDamageTurret _checkLevelDamageTurret;
     [SerializeField]
     private GameObject _damageUI;
+    [SerializeField]
+    private GameObject _damageUIBoss;
     private void Start()
     {
         _rigidbody = gameObject.GetComponent<Rigidbody>();
@@ -26,7 +28,7 @@ public class TurretBullet : MonoBehaviour
 
     private void Update()
     {
-        FindClosestEnemy();
+        //FindClosestEnemy();
     }
 
     public void FindClosestEnemy()
@@ -55,12 +57,27 @@ public class TurretBullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyHealth dealDamageForEnemy = other.GetComponent<EnemyHealth>();
-            dealDamageForEnemy.TakeDamage(DamageManager.TurretBulletDamage()* _checkLevelDamageTurret.ecreaseDamage);
-            GameObject takeDamageUI = Instantiate(_damageUI, other.transform.position + new Vector3(0, 1.5f, 0), _damageUI.transform.rotation);
-            Destroy(takeDamageUI, 0.5f);
+            dealDamageForEnemy.TakeDamage(DamageManager.TurretBulletDamage() * _checkLevelDamageTurret.ecreaseDamage * DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop * DamageManager._buffDamageByLevelTurretUnit);
+            GameObject takeDamageUI = Instantiate(_damageUI, other.transform.position + new Vector3(0, 2f, 0), _damageUI.transform.rotation);
+            Destroy(takeDamageUI, 1f);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            _detection = false;
+
+        }
+        
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            BossHealth dealDamageForBoss = other.GetComponent<BossHealth>();
+            dealDamageForBoss.TakeDamage(DamageManager.TurretBulletDamage() * _checkLevelDamageTurret.ecreaseDamage * DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop * DamageManager._buffDamageByLevelTurretUnit);
+            GameObject takeDamageUI = Instantiate(_damageUIBoss, other.transform.position + new Vector3(0, 1.5f, 0), _damageUI.transform.rotation);
+            Destroy(takeDamageUI, 0.5f);
+        }
+
+        if (other.gameObject.CompareTag("Boss"))
         {
             Destroy(gameObject);
             _detection = false;

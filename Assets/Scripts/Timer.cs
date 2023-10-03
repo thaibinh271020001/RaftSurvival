@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     private Text _timerText;
-    private float _curentTime;
+    public static float _curentTime;
+    public static float _timeBossDie;
     void Start()
     {
         _timerText = GetComponent<Text>();

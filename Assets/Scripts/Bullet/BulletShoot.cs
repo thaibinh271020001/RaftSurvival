@@ -20,11 +20,6 @@ public class BulletShoot : MonoBehaviour
         Destroy(gameObject, 2.4f);
     }
 
-    private void Update()
-    {
-        FindClosestEnemy();
-    }
-
     public void FindClosestEnemy()
     {
         if (_detection == true)
@@ -51,10 +46,21 @@ public class BulletShoot : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyHealth dealDamageForEnemy = other.GetComponent<EnemyHealth>();
-            dealDamageForEnemy.TakeDamage(DamageManager.DeafaultDamage()*DamageUnit.damageIncreaseByAttckUnit);
+            dealDamageForEnemy.TakeDamage(DamageManager.DeafaultDamage()*DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            _detection = false;
+        }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            BossHealth dealDamageForEnemy = other.GetComponent<BossHealth>();
+            dealDamageForEnemy.TakeDamage(DamageManager.DeafaultDamage()*DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop);
+        }
+
+        if (other.gameObject.CompareTag("Boss"))
         {
             Destroy(gameObject);
             _detection = false;

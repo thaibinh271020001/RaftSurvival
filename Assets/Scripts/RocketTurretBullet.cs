@@ -19,8 +19,11 @@ public class RocketTurretBullet : MonoBehaviour
 
     [SerializeField]
     private CheckLevelDamageRocketTurret _checkLevelRocketTurret;
+
     [SerializeField]
     private GameObject _damageUI;
+    [SerializeField]
+    private GameObject _damageUIBoss;
     private void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -31,7 +34,7 @@ public class RocketTurretBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
         {
             BlowObjects();
             Instantiate(_particleSystem, transform.position, transform.rotation);
@@ -50,12 +53,20 @@ public class RocketTurretBullet : MonoBehaviour
                 EnemyHealth enemyHealth = col.GetComponent<EnemyHealth>();
                 if (enemyHealth != null)
                 {
-                    enemyHealth.TakeDamage(_explosionDamage * _checkLevelRocketTurret.ecreaseDamage);
-                    GameObject takeDamageUI = Instantiate(_damageUI, col.transform.position + new Vector3(0, 1.5f, 0), _damageUI.transform.rotation);
+                    enemyHealth.TakeDamage(DamageManager.RocketTurretDamage() * _checkLevelRocketTurret.ecreaseDamage * DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop * DamageManager._buffDamageByLevelRocketTurret);
+                    GameObject takeDamageUI = Instantiate(_damageUI, col.transform.position + new Vector3(0, 3f, 0), _damageUI.transform.rotation);
+                    Destroy(takeDamageUI, 2f);
+                }
+            }
+            if (col.gameObject.CompareTag("Boss"))
+            {
+                BossHealth bossHealth = col.GetComponent<BossHealth>();
+                if (bossHealth != null)
+                {
+                    bossHealth.TakeDamage(DamageManager.RocketTurretDamage() * _checkLevelRocketTurret.ecreaseDamage * DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop * DamageManager._buffDamageByLevelRocketTurret);
+                    GameObject takeDamageUI = Instantiate(_damageUIBoss, col.transform.position + new Vector3(0, 1.5f, 0), _damageUIBoss.transform.rotation);
                     Destroy(takeDamageUI, 0.5f);
                 }
-
-
             }
         }
     }

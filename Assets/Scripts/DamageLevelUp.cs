@@ -23,7 +23,9 @@ public class DamageLevelUp : MonoBehaviour
 
     private void OnMouseDown()
     {
+        CameraRotate.IsUpgradeing = false;
         Time.timeScale = 1;
+        Play.isProtected = false;
         LevelManager.isUpgrade = false;//disable upgrade grid
         _currentLevel++;
         _levelText.text = "Level " + _currentLevel.ToString();
@@ -38,6 +40,7 @@ public class DamageLevelUp : MonoBehaviour
         float damageWereIncrease = DamageUnit.damageIncreaseByAttckUnit * ecreaseDamagePercent;
         ecreaseDamage = damageWereIncrease - DamageUnit.damageIncreaseByAttckUnit;
         DamageUnit.damageIncreaseByAttckUnit = damageWereIncrease;
+        Debug.Log(ecreaseDamage);
     }
 
 

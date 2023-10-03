@@ -21,7 +21,10 @@ public class FollowEnemy : MonoBehaviour
 
     void Update()
     {
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
         DetectionByPlayer();
+        DetectionBoss();
     }
 
     public void DetectionByPlayer()
@@ -46,6 +49,25 @@ public class FollowEnemy : MonoBehaviour
             if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > _delayShoot)
             {
                 Vector3 direction = enemyClosest.transform.position - transform.position;
+                transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+                Instantiate(_bulletPrefabs, _shootPoint.position, _shootPoint.rotation).SetActive(true);
+                shootingInterval = Time.time;
+            }
+        }
+    }
+
+
+    public void DetectionBoss()
+    {
+        GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+        
+        if(boss != null)
+        {
+            float distance = Vector3.Distance(transform.position, boss.transform.position);
+            if (distance < _distanceDetectionByPlayer && Time.time - shootingInterval > _delayShoot)
+            {
+                Vector3 direction = boss.transform.position - transform.position;
                 transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
                 Instantiate(_bulletPrefabs, _shootPoint.position, _shootPoint.rotation).SetActive(true);

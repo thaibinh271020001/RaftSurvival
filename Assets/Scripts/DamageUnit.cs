@@ -14,16 +14,18 @@ public class DamageUnit : MonoBehaviour
 
     void Start()
     {
+
         float damageWereIncrease = damageIncreaseByAttckUnit * ecreaseDamagePercent;
         ecreaseDamage = damageWereIncrease - damageIncreaseByAttckUnit;
         damageIncreaseByAttckUnit = damageWereIncrease;
+        Debug.Log(ecreaseDamage);
     }
 
     private void Update()
     {
         if (DamageHealth.damageIsDie == true)
         {
-            damageIncreaseByAttckUnit = damageIncreaseByAttckUnit - ecreaseDamage - DamageLevelUp.ecreaseDamage;
+            damageIncreaseByAttckUnit = 1f /*damageIncreaseByAttckUnit - ecreaseDamage - DamageLevelUp.ecreaseDamage*/;
             DamageHealth.damageIsDie = false;
         }
     }

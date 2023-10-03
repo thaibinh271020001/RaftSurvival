@@ -68,6 +68,4 @@ public class Setting : MonoBehaviour
         _menu.SetActive(false);
         _upgradeButton.SetActive(false);
     }
-
-    
 }

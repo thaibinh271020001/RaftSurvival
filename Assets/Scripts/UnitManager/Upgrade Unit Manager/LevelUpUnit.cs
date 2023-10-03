@@ -23,15 +23,16 @@ public class LevelUpUnit : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
 
-        if(_currentLevel < 4)
+        Play.isProtected = false;
+        if (_currentLevel < 4)
         {
             listLevel[_currentLevel].SetActive(true);
             listLevel[_currentLevel - 1].SetActive(false);
 
             VariableStatic._currentLevel++;
             VariableStatic.checkUpgrade[refIdUpgrade] = false;
+            CameraRotate.IsUpgradeing = false;
 
             _currentLevel++;
             _levelText.text = "Level " + _currentLevel.ToString();

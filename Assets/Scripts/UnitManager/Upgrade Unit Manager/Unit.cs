@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _tankModule;
-
     private void Update()
     {
         if (VariableStatic.panelUpgradeIsShow == false)

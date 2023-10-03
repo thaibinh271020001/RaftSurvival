@@ -8,14 +8,30 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float _speed;
     private GameObject bullet;
+
+    private Rigidbody _rigidbody;
+    [SerializeField]
+    private bool _isGoldFishMovement;
+
     void Start()
     {
-        _targetPlayer = GameObject.Find("PlayerPoint");
+        if (_isGoldFishMovement == false)
+        {
+            _targetPlayer = GameObject.Find("PlayerPoint");
+        }
+        if(_isGoldFishMovement == true)
+        {
+            _rigidbody = gameObject.GetComponent<Rigidbody>();
+            _rigidbody.velocity = transform.forward * _speed;
+        }
     }
 
     void Update()
     {
-        transform.LookAt(_targetPlayer.transform, Vector3.up);
-        transform.Translate(Vector3.forward * Time.deltaTime * _speed);
+        if(_isGoldFishMovement == false)
+        {
+            transform.LookAt(_targetPlayer.transform, Vector3.up);
+            transform.Translate(Vector3.forward * Time.deltaTime * _speed);
+        }
     }
 }

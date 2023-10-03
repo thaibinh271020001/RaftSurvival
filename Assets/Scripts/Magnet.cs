@@ -41,6 +41,15 @@ public class Magnet : MonoBehaviour
                     rb.AddForce(direction.normalized * _magnetForce);
                 }
             }
+            if (col.CompareTag("Bomb") || col.CompareTag("Heal") || col.CompareTag("Coin") || col.CompareTag("Magnet"))
+            {
+                Rigidbody rb = col.GetComponent<Rigidbody>();
+                if(rb != null)
+                {
+                    Vector3 direction = transform.position - col.transform.position;
+                    rb.AddForce(direction.normalized * _magnetForce);
+                }
+            }
         }
 
     }

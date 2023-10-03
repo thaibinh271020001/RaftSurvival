@@ -23,6 +23,9 @@ public class VariableStatic : MonoBehaviour
     //
     public static bool isBuildForceField = false;
 
+    //Check main raft Player;
+    public static bool isMainRaft = true;
+
     private void Update()
     {
         if (LevelManager.isUpgrade == false)

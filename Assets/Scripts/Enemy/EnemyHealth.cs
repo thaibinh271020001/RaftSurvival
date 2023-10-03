@@ -17,13 +17,13 @@ public class EnemyHealth : MonoBehaviour
 
     public static float _damgeTaken;
 
+    public bool NoExperience;
+
     public void TakeDamage(float damage)
     {
         _health -= damage;
 
-        Debug.Log(damage);
         _damgeTaken = damage;
-        Debug.Log(_health);
         if(_health <= 0)
         {
             Die();
@@ -32,7 +32,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Instantiate(_experience, gameObject.transform.position + new Vector3(0, 0.37f, 0), _experience.transform.rotation);
+        if (NoExperience == false)
+        {
+            Instantiate(_experience, gameObject.transform.position + new Vector3(0, 0.37f, 0), _experience.transform.rotation);
+        }
         Instantiate(_skull, gameObject.transform.position + new Vector3(0, 1.25f, 0), _skull.transform.rotation);
         Destroy(_enemy);
     }

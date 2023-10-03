@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public  Vector3 diretion;
 
     [SerializeField]
-    private float pushForce; 
+    private float pushForce;
+
+
+    [SerializeField]
+    private GameObject _fingerArrow;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();   
@@ -24,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
         float vInput = _floatingJoystick.Vertical;
 
         diretion = new Vector3(hInput, 0, vInput);
+        if(diretion != Vector3.zero)
+        {
+            _fingerArrow.SetActive(false);
+        }
         _rigidbody.velocity = diretion*_speed; 
     }
 }

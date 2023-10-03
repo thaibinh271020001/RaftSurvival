@@ -19,7 +19,7 @@ public class FlameThrower : MonoBehaviour
         if(closestEnemy != null)
         {
             _distance = closestEnemy.DetectionByPlayer(gameObject.transform);
-            if (_distance < 7.5f)
+            if (_distance < 8)
             {
                 ActiveFlame();
             }
@@ -28,7 +28,7 @@ public class FlameThrower : MonoBehaviour
                 DisableFlame();
             }
         }
-        
+        DetectionBoss();
     }
 
     public void ActiveFlame()
@@ -38,5 +38,26 @@ public class FlameThrower : MonoBehaviour
     public void DisableFlame()
     {
         _flamePlace.SetActive(false);
+    }
+
+    public void DetectionBoss()
+    {
+        GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+
+        if (boss != null)
+        {
+            float distance = Vector3.Distance(transform.position, boss.transform.position);
+           
+            Vector3 direction = boss.transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            if (distance < 12f)
+            {
+                ActiveFlame();
+            }
+            else
+            {
+                DisableFlame();
+            }
+        }
     }
 }

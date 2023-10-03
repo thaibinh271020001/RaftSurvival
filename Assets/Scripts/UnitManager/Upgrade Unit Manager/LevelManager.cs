@@ -10,8 +10,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private Text _levelText;
     private float _currentLevel = 1;
-    private float _pointExperience = 0;
+   
+    public float _pointExperience = 0;
+    [SerializeField]
     private float _maxLevelUpExperience = 100;
+    [SerializeField]
+    private float _plusExperiencePoint;
+    [SerializeField]
     private float _experienceIncrease = 1.1f;
 
 
@@ -21,14 +26,29 @@ public class LevelManager : MonoBehaviour
 
     public static bool isUpgrade;
 
-    
+    public static bool IsExperienceMove = true;
+
+    private void Update()
+    {
+        _levelBar.value = (float)_pointExperience / _maxLevelUpExperience;
+
+        if (_pointExperience >= _maxLevelUpExperience)
+        {
+            _levelBar.value = 0;
+            _pointExperience = 0;
+            _currentLevel++;
+            _maxLevelUpExperience *= _experienceIncrease;
+            _levelText.text = "" + _currentLevel;
+            LevelUpUI();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Experience"))
         {
-            _pointExperience += 20;
-            _levelBar.value = (float)_pointExperience / _maxLevelUpExperience;
+            _pointExperience += _plusExperiencePoint;
+            /*_levelBar.value = (float)_pointExperience / _maxLevelUpExperience;
 
             if (_pointExperience >= _maxLevelUpExperience)
             {
@@ -38,7 +58,7 @@ public class LevelManager : MonoBehaviour
                 _maxLevelUpExperience *= _experienceIncrease;
                 _levelText.text = "" + _currentLevel;
                 LevelUpUI();
-            }
+            }*/
         }
     }
 

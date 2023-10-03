@@ -10,6 +10,7 @@ public class DealDamageByEnemy : MonoBehaviour
     private ThrusterHealth _thrusterHealth;
     private LightingHealth _lightingHealth;
     private DamageHealth _damageHealth;
+    private HealthModuleHealth _healthModuleHealth;
     [SerializeField]
     public float _damage;
     private float _timeInterval;
@@ -45,6 +46,12 @@ public class DealDamageByEnemy : MonoBehaviour
             if (_damageHealth != null)
             {
                 _damageHealth.TakeDamage(_damage);
+                
+            }
+            _healthModuleHealth = other.GetComponent<HealthModuleHealth>();
+            if (_healthModuleHealth != null)
+            {
+                _healthModuleHealth.TakeDamage(_damage);
                 
             }
 

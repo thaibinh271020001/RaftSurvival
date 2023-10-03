@@ -21,6 +21,8 @@ public class CheckLevelDamageRocketTurret : MonoBehaviour
     private void OnMouseDown()
     {
         Time.timeScale = 1;
+        CameraRotate.IsUpgradeing = false;
+        Play.isProtected = false;
         LevelManager.isUpgrade = false;//disable upgrade grid
         _currentLevel++;
         _levelText.text = "Level " + _currentLevel.ToString();

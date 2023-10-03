@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1535403939000382, guid: 402d9b250ef5ab742a69cfc83452fc76, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4253129692133327, guid: 402d9b250ef5ab742a69cfc83452fc76, type: 3}
       propertyPath: m_RootOrder
@@ -124,10 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb3e895a5a391349a635222120a04c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionRadius: 6
+  _explosionRadius: 3
   _explosionDamage: 5
   _particleSystem: {fileID: 8522209674431377325, guid: e2627ac2108a9d146a5c718f4e78b929, type: 3}
   _speed: 15
   _lifeTime: 4
   _checkLevelRocketTurret: {fileID: 0}
   _damageUI: {fileID: 0}
+  _damageUIBoss: {fileID: 0}

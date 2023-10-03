@@ -28,7 +28,7 @@ public class MagneLevelUp : MonoBehaviour
 
     private void OnMouseDown()
     {
-
+        Play.isProtected = false;
         if (_currentLevel < 4)
         {
             listLevel[_currentLevel].SetActive(true);
@@ -36,6 +36,7 @@ public class MagneLevelUp : MonoBehaviour
 
             VariableStatic._currentLevel++;
             VariableStatic.checkUpgrade[refIdUpgrade] = false;
+            CameraRotate.IsUpgradeing = false;
 
             _currentLevel++;
 

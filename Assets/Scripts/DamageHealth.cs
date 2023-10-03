@@ -17,17 +17,38 @@ public class DamageHealth : MonoBehaviour
 
     private Coroutine _healthBarCoroutine;
 
-
     public static bool damageIsDie;
 
     private void Start()
     {
+        _health = HealthManager.health;
         _currentHealth = _health;
     }
 
     private void Update()
     {
+        if (HealthUnit.healthIsBuild == true)
+        {
+            if (HealthManager.isIncresaHealth == true)
+            {
+                _health = HealthManager.increaseHealth;
+                Invoke("Invinsible", 0.5f);
+                _currentHealth = _health;
+            }
+
+        }
+        if (HealthModuleHealth.healthIsDie == true)
+        {
+            _health = HealthManager.health;
+            HealthUnit.healthIsBuild = false;
+            _currentHealth = _health;
+        }
         _sliderHealthBar.value = _currentHealth / _health;
+    }
+
+    public void Invinsible()
+    {
+        HealthManager.isIncresaHealth = false;
     }
 
     public void TakeDamage(float damage)
@@ -61,7 +82,6 @@ public class DamageHealth : MonoBehaviour
         _HealthBar.SetActive(false);
 
     }
-
 
     private void Die()
     {

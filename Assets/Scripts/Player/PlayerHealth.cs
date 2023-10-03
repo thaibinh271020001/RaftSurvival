@@ -22,17 +22,37 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        _health = HealthManager.health;
         _currentHealth = _health;
     }
 
     private void Update()
     {
+        if (HealthUnit.healthIsBuild == true)
+        {
+            if (HealthManager.isIncresaHealth == true)
+            {
+                _health = HealthManager.increaseHealth;
+                Invoke("Invinsible", 0.5f);
+                _currentHealth = _health;
+            }
+        }
+        if (HealthModuleHealth.healthIsDie == true)
+        {
+            _health = HealthManager.health;
+            HealthUnit.healthIsBuild = false;
+            _currentHealth = _health;
+        }
         _sliderHealthBar.value = _currentHealth / _health;   
+    }
+
+    public void Invinsible()
+    {
+        HealthManager.isIncresaHealth = false;
     }
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("abc");
         _currentHealth -= damage;
 
         if (_currentHealth <= 0)
@@ -40,7 +60,10 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
 
-        ShowHealthBar();
+        if(_currentHealth < _health)
+        {
+            ShowHealthBar();
+        }
     }
 
     public void ShowHealthBar()
@@ -62,13 +85,10 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-
     private void Die()
     {
-
-
         //IsDie = true;
         //Time.timeScale = 0;
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

@@ -13,9 +13,11 @@ public class PickMoreUnit : MonoBehaviour
     [SerializeField]
     private GameObject _down;
 
+    public bool isShowUpgradeUnit = true;
     void Update()
     {
-        if(LevelManager.isUpgrade == true){
+        if (LevelManager.isUpgrade == true && isShowUpgradeUnit == true)
+        {
             if (_left != null)
             {
                 _left.SetActive(true);
@@ -32,9 +34,11 @@ public class PickMoreUnit : MonoBehaviour
             {
                 _down.SetActive(true);
             }
+            isShowUpgradeUnit = false;
         }
-        else
+        if(LevelManager.isUpgrade == false)
         {
+            isShowUpgradeUnit = true;
             if (_left != null)
             {
                 _left.SetActive(false);

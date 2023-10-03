@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: m_UpdateMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 137049381303059270, guid: 19630a72f0aa2994196aa7f088c9c61c, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114090854708018481, guid: 19630a72f0aa2994196aa7f088c9c61c, type: 3}
     - {fileID: 114336802168132282, guid: 19630a72f0aa2994196aa7f088c9c61c, type: 3}
@@ -396,6 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _isGoldFishMovement: 0
 --- !u!114 &5373930194846746008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,10 +413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d2761b78f6f8147ba8bd4944a3e1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 4000
+  _health: 10
   _experience: {fileID: 1468513633170053, guid: ef19b7315c8928b428efda1d2d346342, type: 3}
   _skull: {fileID: 377415590441862655, guid: e8fd39b5352ad39408fa5b7781868868, type: 3}
   _enemy: {fileID: 2123558048413123561}
+  NoExperience: 0
 --- !u!114 &8520197479458148490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,12 +430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc412cb08b77154c92f499b85f782f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 5373930194846746008}
-  _defaultBulletDamage: 10
-  _tankBulletDamage: 10
-  _flameDamage: 4
-  _airPlaneDamage: 5
-  _lightingDamage: 5
   _damageUI: {fileID: 6217296464291981252, guid: 5bbb1684409046b4f917c78afd65dfc9, type: 3}
 --- !u!114 &8823089684574902892
 MonoBehaviour:

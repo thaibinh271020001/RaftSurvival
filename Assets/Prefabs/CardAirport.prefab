@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 8801396069124494467}
   - component: {fileID: 8801396069124494468}
   - component: {fileID: -224191704972069041}
+  - component: {fileID: 7350365912047570678}
   m_Layer: 5
   m_Name: CardAirport
   m_TagString: CardUpgrade
@@ -356,7 +357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.46}
   m_SizeDelta: {x: 280, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8801396069124494466
@@ -472,6 +473,27 @@ MonoBehaviour:
   _unitPrefab: {fileID: 5973146290112447288, guid: a9c5594a7a8bc7d4fbf34b2e811556bf, type: 3}
   _serialNumber: 0
   _textUpgrade: {fileID: 8801396068778086600}
+--- !u!95 &7350365912047570678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801396069124494470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dcf074571179f7045adc9fa6ba12740d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8801396069254785362
 GameObject:
   m_ObjectHideFlags: 0

@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 8801396069124494467}
   - component: {fileID: 8801396069124494468}
   - component: {fileID: 8211132308319521340}
+  - component: {fileID: 5828946881539882736}
   m_Layer: 5
   m_Name: CardSoldier
   m_TagString: CardUpgrade
@@ -472,6 +473,27 @@ MonoBehaviour:
   _unitPrefab: {fileID: 6367143365455695479, guid: 50a362863176baf4db67d980dfd06d31, type: 3}
   _serialNumber: 8
   _textUpgrade: {fileID: 8801396068778086600}
+--- !u!95 &5828946881539882736
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801396069124494470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dcf074571179f7045adc9fa6ba12740d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8801396069254785362
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,14 @@ TagManager:
   - CardUpgrade
   - LightingAttack
   - TurretBullet
+  - Coin
+  - Boss
+  - Guard
+  - Bomb
+  - Magnet
+  - Heal
+  - Protected
+  - Root
   layers:
   - Default
   - TransparentFX

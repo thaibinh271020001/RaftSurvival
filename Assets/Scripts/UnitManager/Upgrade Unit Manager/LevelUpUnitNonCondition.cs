@@ -20,7 +20,9 @@ public class LevelUpUnitNonCondition : MonoBehaviour
 
     private void OnMouseDown()
     {
+        CameraRotate.IsUpgradeing = false;
         Time.timeScale = 1;
+        Play.isProtected = false;
         LevelManager.isUpgrade = false;//disable upgrade grid
         _currentLevel++;
         _levelText.text = "Level " + _currentLevel.ToString();
