@@ -26,7 +26,6 @@ public class ChooseUnit : MonoBehaviour
     private void OnMouseDown()
     {
         _cameraZoom = GameObject.Find("CameraUpgrade");
-        Debug.Log("aLO");
         _cameraZoom.transform.position = transform.position;
         CameraRotate.IsUpgradeing = false;
         Play.isProtected = false;
@@ -45,7 +44,6 @@ public class ChooseUnit : MonoBehaviour
         
         //VariableStatic.CanChoose = true;
         Time.timeScale = 1f;
-        Debug.Log("Trigger");
         if (other.CompareTag("ShipModule"))
         {
             gameObject.SetActive(false);

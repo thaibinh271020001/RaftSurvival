@@ -17,6 +17,8 @@ public class ThrusterLevelUp : MonoBehaviour
     private PlayerMovement _playerMovement;
     public static float ecreaseSpeed=0;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
     private void Start()
     {
         _playerMovement = GameObject.Find("PlayerRaft").GetComponent<PlayerMovement>();
@@ -37,6 +39,8 @@ public class ThrusterLevelUp : MonoBehaviour
 
         _levelUpObject.SetActive(false);//disbale upgrade unit
 
+        _upgradeFX.SetActive(true);
+        Invoke("enableUpgradeFX", 1f);
     }
 
     public void IncreaseSpeed()
@@ -44,5 +48,10 @@ public class ThrusterLevelUp : MonoBehaviour
         float speedWereIncrease = _playerMovement._speed * ecreaseSpeedPercent;
         ecreaseSpeed = speedWereIncrease - _playerMovement._speed;
         _playerMovement._speed = speedWereIncrease;
+    }
+
+    private void enableUpgradeFX()
+    {
+        _upgradeFX.SetActive(false);
     }
 }

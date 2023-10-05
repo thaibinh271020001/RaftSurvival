@@ -21,6 +21,9 @@ public class MagneLevelUp : MonoBehaviour
     [SerializeField]
     private Magnet _magnet;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
+
     private void Start()
     {
         _levelText.text = "Level " + _currentLevel.ToString();
@@ -48,6 +51,8 @@ public class MagneLevelUp : MonoBehaviour
             LevelManager.isUpgrade = false;
             _levelUpObject.SetActive(false);
 
+            _upgradeFX.SetActive(true);
+            Invoke("enableUpgradeFX", 1f);
         }
     }
 
@@ -55,5 +60,10 @@ public class MagneLevelUp : MonoBehaviour
     {
         _magnet._radius *= 1.4f;
         increaseRadius = _magnet._radius;
+    }
+
+    private void enableUpgradeFX()
+    {
+        _upgradeFX.SetActive(false);
     }
 }

@@ -15,12 +15,16 @@ public class SelectUnit : MonoBehaviour
     private GameObject[] _forceFieldModule;
     private void Awake()
     {
+        Time.timeScale = 1;
         PlayerPrefs.SetInt("IsStartGame", 0);
     }
 
     private void Start()
     {
-        Debug.Log(VariableStatic.isMainRaft);
+        VariableStatic.numberCard.Clear();
+        Play.quantityEnenyDie = 0;
+        Play.quantityCoinEarned = 0;
+
         for (int i = 0; i < 7; i++)
         {
             if (PlayerPrefs.GetInt("CharacterSelection") - 1 == i)

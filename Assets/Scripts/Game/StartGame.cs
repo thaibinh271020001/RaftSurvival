@@ -22,7 +22,7 @@ public class StartGame : MonoBehaviour
 
     public void StartG()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void Loading()

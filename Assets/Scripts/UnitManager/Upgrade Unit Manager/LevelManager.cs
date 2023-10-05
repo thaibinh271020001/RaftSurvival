@@ -14,8 +14,8 @@ public class LevelManager : MonoBehaviour
     public float _pointExperience = 0;
     [SerializeField]
     private float _maxLevelUpExperience = 100;
-    [SerializeField]
-    private float _plusExperiencePoint;
+    
+    public float _plusExperiencePoint;
     [SerializeField]
     private float _experienceIncrease = 1.1f;
 
@@ -27,11 +27,12 @@ public class LevelManager : MonoBehaviour
     public static bool isUpgrade;
 
     public static bool IsExperienceMove = true;
+    public static float increaseExperience = 1f;
 
     private void Update()
     {
         _levelBar.value = (float)_pointExperience / _maxLevelUpExperience;
-
+        
         if (_pointExperience >= _maxLevelUpExperience)
         {
             _levelBar.value = 0;

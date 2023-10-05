@@ -86,7 +86,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: b704bfa32d1d810428c3ee6f7c4ada96, type: 2}
   m_Controller: {fileID: 9100000, guid: 85bb78a83778a7349b0063bd47caedea, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -144,6 +144,7 @@ MonoBehaviour:
   - {fileID: 1159643303771193, guid: b2d417ddc7b549241ac02255927c67cd, type: 3}
   - {fileID: 1887534151247012, guid: 1c4b9cfbf49e54f4bab77f861ae17f60, type: 3}
   - {fileID: 1437311139173221, guid: e63e5cafca8cb1743a79f3d87b5119c2, type: 3}
+  _bossMaterial: {fileID: 2100000, guid: 252575a2251e1dc49840dad5ced259f0, type: 2}
 --- !u!114 &4345280826674358222
 MonoBehaviour:
   m_ObjectHideFlags: 0

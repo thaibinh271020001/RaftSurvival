@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        Play.quantityEnenyDie++;
         if (NoExperience == false)
         {
             Instantiate(_experience, gameObject.transform.position + new Vector3(0, 0.37f, 0), _experience.transform.rotation);

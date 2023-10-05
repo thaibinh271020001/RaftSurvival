@@ -19,6 +19,9 @@ public class DamageHealth : MonoBehaviour
 
     public static bool damageIsDie;
 
+    [SerializeField]
+    private GameObject _particleSystem;
+
     private void Start()
     {
         _health = HealthManager.health;
@@ -85,6 +88,8 @@ public class DamageHealth : MonoBehaviour
 
     private void Die()
     {
+        GameObject particleDie = Instantiate(_particleSystem, gameObject.transform.position, _particleSystem.transform.rotation);
+        Destroy(particleDie, 1);
         Destroy(gameObject);
     }
 }

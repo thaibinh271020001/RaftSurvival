@@ -16,6 +16,8 @@ public class DamageLevelUp : MonoBehaviour
 
     public static float ecreaseDamage = 0;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
     private void Start()
     {
         _levelText.text = "Level " + _currentLevel.ToString();
@@ -33,6 +35,9 @@ public class DamageLevelUp : MonoBehaviour
         IncreaseDamage();
 
         _levelUpObject.SetActive(false);//disbale upgrade unit
+
+        _upgradeFX.SetActive(true);
+        Invoke("enableUpgradeFX", 1f);
     }
 
     public void IncreaseDamage()
@@ -40,46 +45,10 @@ public class DamageLevelUp : MonoBehaviour
         float damageWereIncrease = DamageUnit.damageIncreaseByAttckUnit * ecreaseDamagePercent;
         ecreaseDamage = damageWereIncrease - DamageUnit.damageIncreaseByAttckUnit;
         DamageUnit.damageIncreaseByAttckUnit = damageWereIncrease;
-        Debug.Log(ecreaseDamage);
     }
 
-
-
-    /*[SerializeField]
-    private GameObject _levelUpObject;
-    [SerializeField]
-    private Text _levelText;
-
-    public int _currentLevel = 1;
-
-    private float ecreaseDamagePercent = 1.1f;
-
-    private PlayerMovement _playerMovement;
-    public static float ecreaseDamage = 0;
-
-    private void Start()
+    private void enableUpgradeFX()
     {
-        _levelText.text = "Level " + _currentLevel.ToString();
-
+        _upgradeFX.SetActive(false);
     }
-
-    private void OnMouseDown()
-    {
-        Time.timeScale = 1;
-        LevelManager.isUpgrade = false;//disable upgrade grid
-        _currentLevel++;
-        _levelText.text = "Level " + _currentLevel.ToString();
-
-        IncreaseDamage();
-
-        _levelUpObject.SetActive(false);//disbale upgrade unit
-
-    }
-
-    public void IncreaseDamage()
-    {
-        float damageWereIncrease = DamageUnit.damageIncreaseByAttckUnit * ecreaseDamagePercent;
-        ecreaseDamage = damageWereIncrease - DamageUnit.damageIncreaseByAttckUnit;
-        DamageUnit.damageIncreaseByAttckUnit = damageWereIncrease;
-    }*/
 }

@@ -16,6 +16,8 @@ public class LevelUpUnit : MonoBehaviour
     private Text _levelText;
     private int _currentLevel=1;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
     private void Start()
     {
         _levelText.text = "Level " + _currentLevel.ToString();
@@ -41,6 +43,13 @@ public class LevelUpUnit : MonoBehaviour
             LevelManager.isUpgrade = false;
             _levelUpObject.SetActive(false);
 
+            _upgradeFX.SetActive(true);
+            Invoke("enableUpgradeFX", 1f);
         }
+    }
+
+    private void enableUpgradeFX()
+    {
+        _upgradeFX.SetActive(false);
     }
 }

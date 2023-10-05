@@ -13,6 +13,8 @@ public class CheckLevelDamgeAirUnit : MonoBehaviour
 
     public float ecreaseDamage = 1;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
 
     private void Start()
     {
@@ -31,6 +33,14 @@ public class CheckLevelDamgeAirUnit : MonoBehaviour
         ecreaseDamage *= 1.2f;
 
         _levelUpObject.SetActive(false);//disbale upgrade unit
+        
+        _upgradeFX.SetActive(true);
+        Invoke("enableUpgradeFX", 1f);
 
+    }
+
+    private void enableUpgradeFX()
+    {
+        _upgradeFX.SetActive(false);
     }
 }

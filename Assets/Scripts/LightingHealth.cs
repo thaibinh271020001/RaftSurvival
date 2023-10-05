@@ -19,6 +19,8 @@ public class LightingHealth : MonoBehaviour
 
     public static bool forceFieldIsDie;
 
+    [SerializeField]
+    private GameObject _particleSystem;
     private void Start()
     {
         _currentHealth = _health;
@@ -84,6 +86,8 @@ public class LightingHealth : MonoBehaviour
 
     private void Die()
     {
+        GameObject particleDie = Instantiate(_particleSystem, gameObject.transform.position, _particleSystem.transform.rotation);
+        Destroy(particleDie, 1);
         Destroy(gameObject);
     }
 }

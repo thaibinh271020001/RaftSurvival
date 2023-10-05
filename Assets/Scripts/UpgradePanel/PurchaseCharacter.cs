@@ -83,6 +83,7 @@ public class PurchaseCharacter : MonoBehaviour
 
     private void Update()
     {
+        _coin = PlayerPrefs.GetInt("Money");
         ShowPriceUpgrade("LevelSoldier",0);
         ShowPriceUpgrade("LevelFlameThrower",1);
         ShowPriceUpgrade("LevelForceField",2);

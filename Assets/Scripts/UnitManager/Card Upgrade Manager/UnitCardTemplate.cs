@@ -31,7 +31,7 @@ public class UnitCardTemplate : MonoBehaviour
         {
             foreach (int number in VariableStatic.numberCard)
             {
-                if (number == _serialNumber && VariableStatic.isClicked == true)
+                if (number == _serialNumber )//& VariableStatic.isClicked == true)
                 {
                     _textUpgrade.SetActive(true);
                     VariableStatic.checkUpgrade[_serialNumber] = true;
@@ -46,7 +46,7 @@ public class UnitCardTemplate : MonoBehaviour
         VariableStatic.isClicked = true;
         VariableStatic.numberCard.Add(_serialNumber);
         LevelManager.isUpgrade = true;
-        ActiveChooseUnit();
+        //ActiveChooseUnit();
         Time.timeScale = 1;
 
         VariableStatic.panelUpgradeIsShow = false;
@@ -59,7 +59,7 @@ public class UnitCardTemplate : MonoBehaviour
         }
     }
 
-    public void ActiveChooseUnit()
+    /*public void ActiveChooseUnit()
     {
         GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
 
@@ -95,5 +95,5 @@ public class UnitCardTemplate : MonoBehaviour
         {
             down.SetActive(true);
         }
-    }
+    }*/
 }

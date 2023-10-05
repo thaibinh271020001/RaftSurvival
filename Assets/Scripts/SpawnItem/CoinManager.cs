@@ -18,15 +18,15 @@ public class CoinManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("IncomeCurrentLevel") == 1)
         {
-            _coinEarn = 22;
+            _coinEarn = 25;
         }
         else if (PlayerPrefs.GetInt("IncomeCurrentLevel") == 2)
         {
-            _coinEarn = 24;
+            _coinEarn = 30;
         }
         else if (PlayerPrefs.GetInt("IncomeCurrentLevel") == 3)
         {
-            _coinEarn = 30;
+            _coinEarn = 35;
         }
         else if (PlayerPrefs.GetInt("IncomeCurrentLevel") == 4)
         {
@@ -37,6 +37,8 @@ public class CoinManager : MonoBehaviour
     {
         if (other.CompareTag("ShipModule"))
         {
+            Play.quantityCoinEarned += _coinEarn;
+            Debug.Log(Play.quantityCoinEarned);
             GameObject UICoin = Instantiate(_coinItem, gameObject.transform.position, _coinItem.transform.rotation);
             Destroy(UICoin, 1f);
 

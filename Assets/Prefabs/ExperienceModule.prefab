@@ -8949,7 +8949,7 @@ GameObject:
   - component: {fileID: 23387922419387399}
   - component: {fileID: 65132084670922771}
   - component: {fileID: 8784051887401149546}
-  - component: {fileID: 5748779079888536721}
+  - component: {fileID: 7642626545685225828}
   m_Layer: 15
   m_Name: LevelUp
   m_TagString: Untagged
@@ -9051,7 +9051,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5748779079888536721
+--- !u!114 &7642626545685225828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9060,11 +9060,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570305292992922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abbf8a2a533b3e8489836f1327364c8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1caa5ea9a01125f4aa91672b0afbac70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _levelUpObject: {fileID: 1652952252054146}
   _levelText: {fileID: 8599628830626711267}
+  _levelManager: {fileID: 0}
+  _upgradeFX: {fileID: 8316180255187751255}
 --- !u!1 &1604742565812221
 GameObject:
   m_ObjectHideFlags: 0
@@ -18893,6 +18895,7 @@ GameObject:
   - component: {fileID: 65402718635637548}
   - component: {fileID: 3225524857189353249}
   - component: {fileID: 4533405114366809479}
+  - component: {fileID: -4363224533513383907}
   m_Layer: 8
   m_Name: ExperienceModule
   m_TagString: ShipModule
@@ -18921,6 +18924,7 @@ Transform:
   - {fileID: 1805326112387509917}
   - {fileID: 2950163983387779261}
   - {fileID: 552513086112625367}
+  - {fileID: 8321356115543104956}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -18953,6 +18957,7 @@ MonoBehaviour:
   _currentHealth: 20
   _sliderHealthBar: {fileID: 2950163983998807646}
   _HealthBar: {fileID: 2950163983387779260}
+  _particleSystem: {fileID: 8522209674431377325, guid: e2627ac2108a9d146a5c718f4e78b929, type: 3}
 --- !u!114 &4533405114366809479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18969,6 +18974,19 @@ MonoBehaviour:
   _levelUpObject: {fileID: 1652952252054146}
   _upgradeGrid: {fileID: 6247464121730207660}
   _upgradeForceFied: {fileID: 1703698999746197}
+--- !u!114 &-4363224533513383907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703698999746197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0dbf9a5bf247d4794ee803d89707da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelManager: {fileID: 0}
 --- !u!1 &1710840169793977
 GameObject:
   m_ObjectHideFlags: 0
@@ -32432,6 +32450,77 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6839443981977200746, guid: a2686a2c4d7604c4c99491ebabdb2b48, type: 3}
   m_PrefabInstance: {fileID: 6431278436875000509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8316692824899664190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4649385063844688}
+    m_Modifications:
+    - target: {fileID: 1079647147812969, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_Name
+      value: UpgradeFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079647147812969, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+--- !u!1 &8316180255187751255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1079647147812969, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+  m_PrefabInstance: {fileID: 8316692824899664190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8321356115543104956 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4979976098522242, guid: 91b237f421f9c7c48afc58f93482118d, type: 3}
+  m_PrefabInstance: {fileID: 8316692824899664190}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8502860383075611407
 PrefabInstance:

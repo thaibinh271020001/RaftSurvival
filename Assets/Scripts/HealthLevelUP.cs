@@ -16,6 +16,8 @@ public class HealthLevelUP : MonoBehaviour
 
     public static float ecreaseHealth = 0;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
     private void Start()
     {
         _levelText.text = "Level " + _currentLevel.ToString();
@@ -37,6 +39,9 @@ public class HealthLevelUP : MonoBehaviour
         _levelUpObject.SetActive(false);//disbale upgrade unit
 
         HealthManager.increaseHealth += 20;
+
+        _upgradeFX.SetActive(true);
+        Invoke("enableUpgradeFX", 1f);
     }
     
     public void IncreaseDamage()
@@ -44,5 +49,10 @@ public class HealthLevelUP : MonoBehaviour
         float healthWereIncrease = HealthUnit.healthIncreaseByHealthUnit * ecreaseHealthPercent;
         ecreaseHealth = healthWereIncrease - HealthUnit.healthIncreaseByHealthUnit;
         DamageUnit.damageIncreaseByAttckUnit = healthWereIncrease;
+    }
+
+    private void enableUpgradeFX()
+    {
+        _upgradeFX.SetActive(false);
     }
 }

@@ -176,7 +176,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 07e71bf9bd018ae4c9b5b42395a868f3, type: 2}
   m_Controller: {fileID: 9100000, guid: e32495b1846ad3a43acf97928e9cb172, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -207,7 +207,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341685467237983}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 3
   m_AngularDrag: 4
   m_UseGravity: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d2761b78f6f8147ba8bd4944a3e1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 15
+  _health: 20
   _experience: {fileID: 1468513633170053, guid: ef19b7315c8928b428efda1d2d346342, type: 3}
   _skull: {fileID: 377415590441862655, guid: e8fd39b5352ad39408fa5b7781868868, type: 3}
   _enemy: {fileID: 1341685467237983}

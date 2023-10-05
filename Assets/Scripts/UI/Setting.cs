@@ -33,7 +33,7 @@ public class Setting : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void SettingButtonMenu()
@@ -50,11 +50,13 @@ public class Setting : MonoBehaviour
     {
         _shop.SetActive(false);
         _menu.SetActive(true);
+        _upgradeButton.SetActive(true);
     }
     public void CloseButtonMenuToShop()
     {
         _shop.SetActive(true);
         _menu.SetActive(false);
+        _upgradeButton.SetActive(false);
     }
     public void CloseButtonUpgradeToMenu()
     {
@@ -67,5 +69,6 @@ public class Setting : MonoBehaviour
         _upgrade.SetActive(true);
         _menu.SetActive(false);
         _upgradeButton.SetActive(false);
+
     }
 }

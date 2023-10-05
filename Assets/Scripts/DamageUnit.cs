@@ -18,7 +18,6 @@ public class DamageUnit : MonoBehaviour
         float damageWereIncrease = damageIncreaseByAttckUnit * ecreaseDamagePercent;
         ecreaseDamage = damageWereIncrease - damageIncreaseByAttckUnit;
         damageIncreaseByAttckUnit = damageWereIncrease;
-        Debug.Log(ecreaseDamage);
     }
 
     private void Update()

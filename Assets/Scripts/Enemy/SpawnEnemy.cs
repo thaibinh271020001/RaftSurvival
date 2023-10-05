@@ -43,6 +43,7 @@ public class SpawnEnemy : MonoBehaviour
     private float countBoss = 1;
 
     private bool _goldFishApaer = false;
+    private bool _goldFishLineApaer = false;
 
     [SerializeField]
     private GameObject _uiBossApear;
@@ -56,13 +57,7 @@ public class SpawnEnemy : MonoBehaviour
 
     void Update()
     {
-
-        /*if (Timer._curentTime > 10 && _goldFishApaer == false)
-        {
-            StartCoroutine(SpawnGoldFishEnemy(_listGoldFish, 15, new Vector3(-25,0,25)));
-        }*/
-
-        if (((Timer._curentTime > 0 && Timer._curentTime < 90) || (Timer._curentTime > 120 && Timer._curentTime < 220)) && bossIsApper == false)
+        if (((Timer._curentTime > 0 && Timer._curentTime < 90) || (Timer._curentTime > 120 && Timer._curentTime < 220)) || (Timer._curentTime > 360 && Timer._curentTime < 420) && bossIsApper == false)
         {
             InstancetiateEnemy();
         }
@@ -78,11 +73,11 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (((Timer._curentTime > 90 && Timer._curentTime < 120) || (Timer._curentTime > 220 && Timer._curentTime < 300)) && bossIsApper == false)
         {
-            InstancetiateWolfEnemy(0.65f);
+            InstancetiateWolfEnemy(0.4f);
         }
-        if (Timer._curentTime > 220 && Timer._curentTime < 300 && bossIsApper == false)
+        if ((Timer._curentTime > 220 && Timer._curentTime < 300) || (Timer._curentTime > 420 && Timer._curentTime < 480) && bossIsApper == false)
         {
-            InstancetiateWolfEnemy(0.55f);
+            InstancetiateWolfEnemy(0.35f);
         }
 
         if (countBoss == 1)
@@ -98,7 +93,15 @@ public class SpawnEnemy : MonoBehaviour
         {
             BossIntancetiate(_bossEarthWorm, _timeSpawnBossWorm);
         }
-        if (Timer._curentTime > 300 && Timer._curentTime < 600 && bossIsApper == false)
+        if (countBoss == 3)
+        {
+            BossIntancetiate(_bossEarthWorm, 900);
+        }
+        if (countBoss == 4)
+        {
+            BossIntancetiate(_bossEarthWorm, 1200);
+        }
+        if ((Timer._curentTime > 300 && Timer._curentTime < 360) || (Timer._curentTime > 480 ) && bossIsApper == false)
         {
             InstancetiateSalmon();
         }
@@ -106,6 +109,11 @@ public class SpawnEnemy : MonoBehaviour
         if (Timer._curentTime > 360 && _goldFishApaer == false)
         {
             StartCoroutine(SpawnGoldFishEnemy(_listGoldFishAround, 60, Vector3.zero));
+        }
+        
+        if (Timer._curentTime > 390 && _goldFishLineApaer == false)
+        {
+            StartCoroutine(SpawnGoldFishEnemyLine(_listGoldFish, 60, Vector3.zero + new Vector3(-25, 0, 25)));
         }
 
         if (bossIsApper)
@@ -130,6 +138,15 @@ public class SpawnEnemy : MonoBehaviour
             IntanceGoldFish(goldFish, pos);
             yield return new WaitForSeconds(timeInterval);
             _goldFishApaer = false;
+        }
+    }private IEnumerator SpawnGoldFishEnemyLine(GameObject goldFish, float timeInterval,Vector3 pos)
+    {
+        while (true)
+        {
+            _goldFishLineApaer = true;
+            IntanceGoldFish(goldFish, pos);
+            yield return new WaitForSeconds(timeInterval);
+            _goldFishLineApaer = false;
         }
     }
 
@@ -174,7 +191,7 @@ public class SpawnEnemy : MonoBehaviour
 
     public void InstancetiateEnemy()
     {
-        if (Time.time - _timeInterval > 0.8f)
+        if (Time.time - _timeInterval > 0.42f)
         {
             Vector3 offset = Random.onUnitSphere;
             if ((offset.x > 0.6f || offset.x <-0.6f) && (offset.z > 0.6f||offset.z <-0.6f))
@@ -190,7 +207,7 @@ public class SpawnEnemy : MonoBehaviour
 
     public void InstancetiateSalmon()
     {
-        if (Time.time - _timeInterval > 0.8f)
+        if (Time.time - _timeInterval > 0.5f)
         {
             Vector3 offset = Random.onUnitSphere;
             if ((offset.x > 0.6f || offset.x <-0.6f) && (offset.z > 0.6f||offset.z <-0.6f))
@@ -206,7 +223,7 @@ public class SpawnEnemy : MonoBehaviour
 
     public void InstancetiateNewEnemy()
     {
-        if (Time.time - _timeInterval > 0.8f)
+        if (Time.time - _timeInterval > 0.7f)
         {
             Vector3 offset = Random.onUnitSphere;
             if ((offset.x > 0.5f || offset.x < -0.5f) && (offset.z > 0.5f || offset.z < -0.5f))

@@ -17,7 +17,6 @@ public class ShopColor : MonoBehaviour
 
     private void Start()
     {
-        _coin = PlayerPrefs.GetInt("Money");
 
         CheckRemovePanel("Color0", 0);
         CheckRemovePanel("Color1", 1);
@@ -29,6 +28,10 @@ public class ShopColor : MonoBehaviour
         CheckRemovePanel("Color7", 7);
     }
 
+    private void Update()
+    {
+        _coin = PlayerPrefs.GetInt("Money");
+    }
     public void RemovePanel(GameObject panel)
     {
         if(_coin > 100)

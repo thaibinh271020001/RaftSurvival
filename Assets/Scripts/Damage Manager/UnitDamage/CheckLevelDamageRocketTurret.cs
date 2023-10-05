@@ -13,6 +13,8 @@ public class CheckLevelDamageRocketTurret : MonoBehaviour
 
     public float ecreaseDamage = 1;
 
+    [SerializeField]
+    private GameObject _upgradeFX;
     private void Start()
     {
         _levelText.text = "Level " + _currentLevel.ToString();
@@ -31,5 +33,12 @@ public class CheckLevelDamageRocketTurret : MonoBehaviour
 
         _levelUpObject.SetActive(false);//disbale upgrade unit
 
+        _upgradeFX.SetActive(true);
+        Invoke("enableUpgradeFX", 1f);
+    }
+
+    private void enableUpgradeFX()
+    {
+        _upgradeFX.SetActive(false);
     }
 }

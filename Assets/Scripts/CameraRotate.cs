@@ -43,7 +43,6 @@ public class CameraRotate : MonoBehaviour
     {
         if (IsUpgradeing)
         {
-            Debug.Log("Is Upgrade");
             _mainCamera.SetActive(false);
             _upgradeCamera.SetActive(true);
         }

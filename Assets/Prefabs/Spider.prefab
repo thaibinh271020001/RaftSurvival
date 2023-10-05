@@ -2960,6 +2960,7 @@ MonoBehaviour:
   - {fileID: 1159643303771193, guid: b2d417ddc7b549241ac02255927c67cd, type: 3}
   - {fileID: 1887534151247012, guid: 1c4b9cfbf49e54f4bab77f861ae17f60, type: 3}
   - {fileID: 1437311139173221, guid: e63e5cafca8cb1743a79f3d87b5119c2, type: 3}
+  _bossMaterial: {fileID: 2100000, guid: a6e6e67c54e8d7f4eb33195f3610ed21, type: 2}
 --- !u!114 &2442308319068905229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3005,7 +3006,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213920194056238}
   serializedVersion: 2
-  m_Mass: 20
+  m_Mass: 90
   m_Drag: 1
   m_AngularDrag: 2
   m_UseGravity: 1
@@ -3349,7 +3350,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 072540f8a0bcb884faed8d26e98be2ff, type: 2}
   m_Controller: {fileID: 9100000, guid: 795a2860dc36b7b4893f3b9463c75fc3, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

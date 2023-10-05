@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,14 +21,24 @@ public class BossHealth : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _drop;
+
+    [SerializeField]
+    private Material _bossMaterial;
+
+    private Color originalColor;
+    private Color blinkColor;
     private void Start()
     {
+        _bossMaterial.color = new Color(1, 1, 1);
         GameObject healbarBossUI = GameObject.Find("UIHealbarBossUI");
         intanceHealth = Instantiate(_healthBar, healbarBossUI.transform.position, healbarBossUI.transform.rotation, healbarBossUI.transform.parent);
 
         GameObject healbarBoss = GameObject.Find("SliderHealthBoss(Clone)");
         slider = healbarBoss.GetComponent<Slider>();
-        
+
+
+        originalColor = _bossMaterial.color;
+        blinkColor = new Color(255, 255, 2000);
     }
 
     private void Update()
@@ -37,9 +47,9 @@ public class BossHealth : MonoBehaviour
     }
 
     public static float _damgeTaken;
-
     public void TakeDamage(float damage)
     {
+        StartCoroutine(BlinkEffect(0.1f));
         _health -= damage;
 
         _damgeTaken = damage;
@@ -48,6 +58,14 @@ public class BossHealth : MonoBehaviour
             _animator.SetBool("IsDie", true);
             Invoke("Die", 1.5f);
         }
+    }
+
+    IEnumerator BlinkEffect(float blinkInterval)
+    {
+            _bossMaterial.color = blinkColor;
+            yield return new WaitForSeconds(blinkInterval);
+            _bossMaterial.color = originalColor;
+       
     }
 
     private void Die()

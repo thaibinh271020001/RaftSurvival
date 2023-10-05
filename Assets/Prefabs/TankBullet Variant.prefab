@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4202296b5c82f4b8173df840c9a698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionRadius: 4
+  _explosionRadius: 2
   _explosionDamage: 15
   _particleSystem: {fileID: 8522209674431377325, guid: e2627ac2108a9d146a5c718f4e78b929, type: 3}
-  _speed: 15
+  _speed: 12
   _lifeTime: 4
   _checkLevelDamgeTank: {fileID: 0}
   _damageUI: {fileID: 0}
