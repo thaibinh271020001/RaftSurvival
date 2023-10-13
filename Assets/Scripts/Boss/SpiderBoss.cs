@@ -23,8 +23,13 @@ public class SpiderBoss : MonoBehaviour
     public float fireRate = 0.2f;
     private bool isShooting = false;
     float timeIntervalFor3bullet;
+
+    [SerializeField]
+    private AudioSource _audio;
     void Start()
     {
+        _audio.Play();
+
         _timeInterval = Time.time;
         timeIntervalFor3bullet = Time.time;
     }

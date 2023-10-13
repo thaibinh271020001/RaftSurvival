@@ -31,8 +31,14 @@ public class Play : MonoBehaviour
     private Text _textTimeCurrentSurvival;
     [SerializeField]
     private Text _textTimeAchievmentSurvival;
+
+    [SerializeField]
+    private AudioSource _audio;
     void Start()
     {
+        _audio.Play();
+        Physics.gravity = new Vector3(0,-100,0);
+
         Application.targetFrameRate = 60;
 
         VariableStatic.isMainRaft = true;
@@ -83,6 +89,9 @@ public class Play : MonoBehaviour
         {
             VariableStatic.numberCard.Add(11);
         }
+
+        LightingHealth.forceFieldIsDie = false;
+        VariableStatic.isBuildForceField = false;
     }
 
     private void Update()

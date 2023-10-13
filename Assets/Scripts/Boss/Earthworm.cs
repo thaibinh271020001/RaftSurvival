@@ -20,9 +20,11 @@ public class Earthworm : MonoBehaviour
     private float _timeInterval;
 
 
-
+    [SerializeField]
+    private AudioSource _audio;
     void Start()
     {
+        _audio.Play();
         _timeInterval = Time.time;
         
     }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4984715789878079675}
   - component: {fileID: 8629607442372273667}
   - component: {fileID: 621621479670204133}
+  - component: {fileID: 8514109158097888308}
+  - component: {fileID: 7034506359023023831}
   m_Layer: 5
   m_Name: 'Text '
   m_TagString: Untagged
@@ -80,6 +82,36 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0
+--- !u!114 &8514109158097888308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643222468869333071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -8}
+  m_UseGraphicAlpha: 1
+--- !u!114 &7034506359023023831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643222468869333071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6217296464291981252
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +125,6 @@ GameObject:
   - component: {fileID: 2793765866158701609}
   - component: {fileID: 8159603441653572431}
   - component: {fileID: -5017115744947183436}
-  - component: {fileID: 607654244618499209}
   m_Layer: 5
   m_Name: CanvasDamgeBoss
   m_TagString: Untagged
@@ -165,7 +196,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8159603441653572431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,18 +227,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textDamage: {fileID: 621621479670204133}
---- !u!114 &607654244618499209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6217296464291981252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1

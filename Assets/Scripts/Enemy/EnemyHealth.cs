@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(_experience, gameObject.transform.position + new Vector3(0, 0.37f, 0), _experience.transform.rotation);
         }
-        Instantiate(_skull, gameObject.transform.position + new Vector3(0, 1.25f, 0), _skull.transform.rotation);
+        Instantiate(_skull, gameObject.transform.position + new Vector3(0, 1.5f, -0.5f), _skull.transform.rotation);
         Destroy(_enemy);
     }
 }

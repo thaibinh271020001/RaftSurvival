@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AircraftModule Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1865509725920217, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1905291704084368, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -185,13 +189,53 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 65749568819500530, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 947770006517638089, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1571977340065982177, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2510652021856156712, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2910301455563605827, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508412933136824910, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614613657498147513, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158502116383872540, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224307261022831535, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224307261022831535, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dac71faf26e243e4cb71b9808170db15, type: 3}
+    - target: {fileID: 6224307261022831535, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457073947883490989, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8176520217762161630, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
       propertyPath: _damageUIBoss
@@ -249,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &5972223338576016352 stripped
@@ -396,6 +440,26 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 111803431473400582, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
   m_PrefabInstance: {fileID: 5972406753308023009}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8108573038370240085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2478440475486301876, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}
+  m_PrefabInstance: {fileID: 5972406753308023009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5762627372676734221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108573038370240085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &8487500186175947273 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2822604952332262120, guid: a2359ae0c54a0db47847f7795da31a90, type: 3}

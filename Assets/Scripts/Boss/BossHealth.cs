@@ -27,6 +27,8 @@ public class BossHealth : MonoBehaviour
 
     private Color originalColor;
     private Color blinkColor;
+
+    public static float elapsedTime = 0;
     private void Start()
     {
         _bossMaterial.color = new Color(1, 1, 1);
@@ -70,6 +72,7 @@ public class BossHealth : MonoBehaviour
 
     private void Die()
     {
+        elapsedTime = Time.timeSinceLevelLoad - SpawnEnemy.spawnTime;
         Instantiate(_drop[0], gameObject.transform.position + new Vector3(0.7f,0.7f), _drop[0].transform.rotation);
         Instantiate(_drop[1], gameObject.transform.position, _drop[0].transform.rotation);
         Instantiate(_drop[2], gameObject.transform.position + new Vector3(-0.7f, 0.7f), _drop[0].transform.rotation);

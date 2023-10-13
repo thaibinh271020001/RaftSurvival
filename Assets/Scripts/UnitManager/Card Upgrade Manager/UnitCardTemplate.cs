@@ -57,43 +57,9 @@ public class UnitCardTemplate : MonoBehaviour
         if ((VariableStatic.checkUpgrade[_serialNumber] == true)){
             VariableStatic.displayUIUpgrade = true;
         }
+
+        Destroy(CardSelectionAlgorithm._instanceCard[0]);
+        Destroy(CardSelectionAlgorithm._instanceCard[1]);
+        Destroy(CardSelectionAlgorithm._instanceCard[2]);
     }
-
-    /*public void ActiveChooseUnit()
-    {
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.CompareTag("LeftUnit") && !obj.activeSelf)
-            {
-                obj.SetActive(true);
-            }
-        }
-
-        GameObject[] leftUpgradeUnit = GameObject.FindGameObjectsWithTag("LeftUnit");
-        GameObject[] rightUpgradeUnit = GameObject.FindGameObjectsWithTag("RightUnit");
-        GameObject[] upUpgradeUnit = GameObject.FindGameObjectsWithTag("UpUnit");
-        GameObject[] downUpgradeUnit = GameObject.FindGameObjectsWithTag("DownUnit");
-
-        //Debug.Log(leftUpgradeUnit[0].name);
-
-        foreach(var left in leftUpgradeUnit)
-        {
-            Debug.Log(left.gameObject.name);
-            left.SetActive(true);
-        }
-        foreach(var right in rightUpgradeUnit)
-        {
-            right.SetActive(true);
-        }
-        foreach(var up in upUpgradeUnit)
-        {
-            up.SetActive(true);
-        }
-        foreach(var down in downUpgradeUnit)
-        {
-            down.SetActive(true);
-        }
-    }*/
 }

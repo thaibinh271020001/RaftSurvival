@@ -91,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
     {
         GameObject particleDie = Instantiate(_particleSystem, gameObject.transform.position, _particleSystem.transform.rotation);
         Destroy(particleDie, 1);
+        Vibration.GameOver();
         Destroy(gameObject);
     }
 }

@@ -9,6 +9,8 @@ public class LighttingDamage : MonoBehaviour
     private GameObject _damageUI;
     [SerializeField]
     private GameObject _damageUIBoss;
+    [SerializeField]
+    private AudioSource _audio;
 
     private void Start()
     {
@@ -19,6 +21,8 @@ public class LighttingDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && Time.time - _timeInterval > 0.2f)
         {
+            _audio.Play();
+
             EnemyHealth dealDamageForEnemy = other.GetComponent<EnemyHealth>();
             dealDamageForEnemy.TakeDamage(DamageManager.LightingDamage() * ForceFieldManager.levelUpDamageForceField * DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop * DamageManager._buffDamageByLevelForceField);
 
@@ -28,6 +32,8 @@ public class LighttingDamage : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Boss") && Time.time - _timeInterval > 0.2f)
         {
+            _audio.Play();
+
             BossHealth dealDamageForBoss = other.GetComponent<BossHealth>();
             dealDamageForBoss.TakeDamage(DamageManager.LightingDamage() * ForceFieldManager.levelUpDamageForceField * DamageUnit.damageIncreaseByAttckUnit * DamageManager._buffDamageByUpgradeShop * DamageManager._buffDamageByLevelForceField);
 

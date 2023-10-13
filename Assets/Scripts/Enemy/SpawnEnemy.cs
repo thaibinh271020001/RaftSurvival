@@ -7,9 +7,13 @@ public class SpawnEnemy : MonoBehaviour
     private float _timeInterval;
     [SerializeField]
     private GameObject Player;
-    
+
     [SerializeField]
     private GameObject _enemyPrefabs;
+    [SerializeField]
+    private GameObject _enemyPrefabs1;
+    [SerializeField]
+    private GameObject _enemyPahinhaNeon;
     [SerializeField]
     private GameObject _newEnemyPrefabs;
     [SerializeField]
@@ -37,6 +41,10 @@ public class SpawnEnemy : MonoBehaviour
     private GameObject _listGoldFishAround;
     [SerializeField]
     private GameObject _salmon;
+    [SerializeField]
+    private GameObject _salmon1;
+    [SerializeField]
+    private GameObject _alligator;
 
 
 
@@ -44,12 +52,22 @@ public class SpawnEnemy : MonoBehaviour
 
     private bool _goldFishApaer = false;
     private bool _goldFishLineApaer = false;
+    private bool _alligatorApaer = false;
 
     [SerializeField]
     private GameObject _uiBossApear;
 
+    public static float spawnTime = 0;
+    private void Awake()
+    {
+        Timer._curentTime = 0;
+        Timer._curentTime = Time.timeSinceLevelLoad;
+    }
+
     void Start()
     {
+        bossIsApper = false;
+        boss1Die = false;
         _timeInterval = Time.time;
     }
 
@@ -59,7 +77,16 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (((Timer._curentTime > 0 && Timer._curentTime < 90) || (Timer._curentTime > 120 && Timer._curentTime < 220)) || (Timer._curentTime > 360 && Timer._curentTime < 420) && bossIsApper == false)
         {
-            InstancetiateEnemy();
+            InstancetiateEnemy(_enemyPrefabs);
+        }
+        if ((Timer._curentTime > 360 && Timer._curentTime < 390) && bossIsApper == false)
+        {
+            InstancetiateEnemy(_enemyPrefabs1);
+        }
+
+        if (((Timer._curentTime > 600 && Timer._curentTime < 690) || (Timer._curentTime > 840) && bossIsApper == false))
+        {
+            InstancetiateEnemy(_enemyPahinhaNeon);
         }
         if (((Timer._curentTime > 30 && Timer._curentTime < 40) || (Timer._curentTime > 90 && Timer._curentTime < 100)
             || (Timer._curentTime > 150 && Timer._curentTime < 160) || (Timer._curentTime > 210 && Timer._curentTime < 220)
@@ -69,20 +96,31 @@ public class SpawnEnemy : MonoBehaviour
             || (Timer._curentTime > 630 && Timer._curentTime < 640) || (Timer._curentTime > 690 && Timer._curentTime < 700)
             ) && bossIsApper == false)
         {
-            InstancetiateNewEnemy();
+            InstancetiateNewEnemy(0.6f);
         }
-        if (((Timer._curentTime > 90 && Timer._curentTime < 120) || (Timer._curentTime > 220 && Timer._curentTime < 300)) && bossIsApper == false)
+        if ((Timer._curentTime > 540 && Timer._curentTime < 600) && bossIsApper == false)
         {
-            InstancetiateWolfEnemy(0.4f);
+            InstancetiateNewEnemy(0.4f);
         }
-        if ((Timer._curentTime > 220 && Timer._curentTime < 300) || (Timer._curentTime > 420 && Timer._curentTime < 480) && bossIsApper == false)
+        if (((Timer._curentTime > 90 && Timer._curentTime < 120) || (Timer._curentTime > 220 && Timer._curentTime < 300) || (Timer._curentTime > 440 && Timer._curentTime < 500)) && bossIsApper == false)
         {
-            InstancetiateWolfEnemy(0.35f);
+            InstancetiateWolfEnemy(0.3f);
         }
-
+        if ((Timer._curentTime > 500 && Timer._curentTime < 540) && bossIsApper == false)
+        {
+            InstancetiateWolfEnemy(0.25f);
+        }
+        if ((Timer._curentTime > 220 && Timer._curentTime < 300) && bossIsApper == false)
+        {
+            InstancetiateWolfEnemy(0.25f);
+        }
+        if ((Timer._curentTime > 420 && Timer._curentTime < 480) && bossIsApper == false)
+        {
+            InstancetiateWolfEnemy(0.15f);
+        }
         if (countBoss == 1)
         {
-            BossIntancetiate(_boss, _timeSpawnBoss);
+            BossIntancetiate(_boss, _timeSpawnBoss,Vector3.zero);
         }
         if (Timer._curentTime > Timer._timeBossDie && boss1Die == true)
         {
@@ -91,30 +129,40 @@ public class SpawnEnemy : MonoBehaviour
         }
         if (countBoss == 2)
         {
-            BossIntancetiate(_bossEarthWorm, _timeSpawnBossWorm);
+            BossIntancetiate(_bossEarthWorm, _timeSpawnBossWorm, new Vector3(0,1,0));
         }
         if (countBoss == 3)
         {
-            BossIntancetiate(_bossEarthWorm, 900);
+            BossIntancetiate(_bossEarthWorm, 900, Vector3.zero);
         }
         if (countBoss == 4)
         {
-            BossIntancetiate(_bossEarthWorm, 1200);
+            BossIntancetiate(_bossEarthWorm, 1200, new Vector3(0, 1, 0));
         }
-        if ((Timer._curentTime > 300 && Timer._curentTime < 360) || (Timer._curentTime > 480 ) && bossIsApper == false)
+        if ((Timer._curentTime > 300 && Timer._curentTime < 360) || (Timer._curentTime > 390 && Timer._curentTime < 500) && bossIsApper == false)
         {
-            InstancetiateSalmon();
+            InstancetiateSalmon(_salmon);
+        }
+        if ((Timer._curentTime > 690) && bossIsApper == false)
+        {
+            InstancetiateSalmon(_salmon1);
         }
 
         if (Timer._curentTime > 360 && _goldFishApaer == false)
         {
             StartCoroutine(SpawnGoldFishEnemy(_listGoldFishAround, 60, Vector3.zero));
         }
-        
+
         if (Timer._curentTime > 390 && _goldFishLineApaer == false)
         {
             StartCoroutine(SpawnGoldFishEnemyLine(_listGoldFish, 60, Vector3.zero + new Vector3(-25, 0, 25)));
         }
+
+        if (Timer._curentTime > 180 && _alligatorApaer == false)
+        {
+            StartCoroutine(SpawnAlligator(_alligator, 120, Vector3.zero + new Vector3(-25, 0, -25)));
+        }
+
 
         if (bossIsApper)
         {
@@ -130,6 +178,16 @@ public class SpawnEnemy : MonoBehaviour
         DestroyByDistance();
     }
 
+    private IEnumerator SpawnAlligator(GameObject alligator, float timeInterval,Vector3 pos)
+    {
+        while (true)
+        {
+            _alligatorApaer = true;
+            IntanceAlligator(alligator, pos);
+            yield return new WaitForSeconds(timeInterval);
+            _alligatorApaer = false;
+        }
+    }
     private IEnumerator SpawnGoldFishEnemy(GameObject goldFish, float timeInterval,Vector3 pos)
     {
         while (true)
@@ -139,7 +197,8 @@ public class SpawnEnemy : MonoBehaviour
             yield return new WaitForSeconds(timeInterval);
             _goldFishApaer = false;
         }
-    }private IEnumerator SpawnGoldFishEnemyLine(GameObject goldFish, float timeInterval,Vector3 pos)
+    }
+    private IEnumerator SpawnGoldFishEnemyLine(GameObject goldFish, float timeInterval,Vector3 pos)
     {
         while (true)
         {
@@ -173,25 +232,31 @@ public class SpawnEnemy : MonoBehaviour
         GameObject goldFishLeft = Instantiate(goldFish, CameraRotate.center + pos, goldFish.transform.rotation);
         Destroy(goldFishLeft, 12f);
     }
+    public void IntanceAlligator(GameObject alligator, Vector3 pos)
+    {
+        Instantiate(alligator, CameraRotate.center + pos, alligator.transform.rotation);
+    }
 
-    public void BossIntancetiate(GameObject boss, float timeSpawn)
+    public void BossIntancetiate(GameObject boss, float timeSpawn , Vector3 pos)
     {
         if (!bossIsApper && Timer._curentTime > timeSpawn && boss1Die == false)
         {
-            GameObject UIBoss = Instantiate(_uiBossApear, gameObject.transform.position, _uiBossApear.transform.rotation);
+            
+            spawnTime = Timer._curentTime;
+            GameObject UIBoss = Instantiate(_uiBossApear, gameObject.transform.position + pos, _uiBossApear.transform.rotation);
             Destroy(UIBoss, 1f);
 
             instanceBossArea = Instantiate(_bossArea, transform.position, Quaternion.identity);
-            Instantiate(boss, transform.position + new Vector3(15,0,15), Quaternion.identity);
+            Instantiate(boss, transform.position + new Vector3(15,0,15), boss.transform.rotation);
 
             countBoss++;
             bossIsApper = true;
         }
     }
 
-    public void InstancetiateEnemy()
+    public void InstancetiateEnemy( GameObject enemy)
     {
-        if (Time.time - _timeInterval > 0.42f)
+        if (Time.time - _timeInterval > 0.4f)
         {
             Vector3 offset = Random.onUnitSphere;
             if ((offset.x > 0.6f || offset.x <-0.6f) && (offset.z > 0.6f||offset.z <-0.6f))
@@ -199,13 +264,13 @@ public class SpawnEnemy : MonoBehaviour
                 offset.y = 0;
                 Vector3 newOffset = transform.position + offset * Random.Range(15.2f, 15.20001f);
 
-                Instantiate(_enemyPrefabs, newOffset, _enemyPrefabs.transform.rotation);
+                Instantiate(enemy, newOffset, enemy.transform.rotation);
                 _timeInterval = Time.time;
             }
         }
     }
 
-    public void InstancetiateSalmon()
+    public void InstancetiateSalmon(GameObject salmon)
     {
         if (Time.time - _timeInterval > 0.5f)
         {
@@ -215,15 +280,15 @@ public class SpawnEnemy : MonoBehaviour
                 offset.y = 0;
                 Vector3 newOffset = transform.position + offset * Random.Range(15.2f, 15.20001f);
 
-                Instantiate(_salmon, newOffset, _enemyPrefabs.transform.rotation);
+                Instantiate(salmon, newOffset, salmon.transform.rotation);
                 _timeInterval = Time.time;
             }
         }
     }
 
-    public void InstancetiateNewEnemy()
+    public void InstancetiateNewEnemy(float timeSpawnInterval)
     {
-        if (Time.time - _timeInterval > 0.7f)
+        if (Time.time - _timeInterval > timeSpawnInterval)
         {
             Vector3 offset = Random.onUnitSphere;
             if ((offset.x > 0.5f || offset.x < -0.5f) && (offset.z > 0.5f || offset.z < -0.5f))
@@ -256,6 +321,8 @@ public class SpawnEnemy : MonoBehaviour
     {
         GameObject destroyEnemy = GameObject.FindGameObjectWithTag("Enemy"); 
         GameObject destroyEnemyDef = GameObject.Find("SardineMob Variant(Clone)");
+        GameObject destroyEnemyDef1 = GameObject.Find("SardineMob Variant 1(Clone)"); 
+        GameObject destroyPiranha = GameObject.Find("Piranha Neon(Clone)");
         GameObject coin = GameObject.FindGameObjectWithTag("Coin");
         GameObject bomb = GameObject.FindGameObjectWithTag("Bomb");
         GameObject magnet = GameObject.FindGameObjectWithTag("Magnet");
@@ -282,7 +349,25 @@ public class SpawnEnemy : MonoBehaviour
                 Destroy(destroyEnemyDef);
             }
         }
-
+        float distanceDef1;
+        if(destroyEnemyDef1 != null)
+        {
+            distanceDef1 = Vector3.Distance(destroyEnemyDef1.transform.position, gameObject.transform.position);
+            if (distanceDef1 > 45)
+            {
+                Destroy(destroyEnemyDef1);
+            }
+        }
+        float distancePiranha;
+        if(destroyPiranha != null)
+        {
+            distancePiranha = Vector3.Distance(destroyPiranha.transform.position, gameObject.transform.position);
+            if (distancePiranha > 45)
+            {
+                Destroy(destroyPiranha);
+            }
+        }
+        
         float distanceCoin;
         if (coin != null)
         {

@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d2761b78f6f8147ba8bd4944a3e1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
+  _health: 120
   _experience: {fileID: 1468513633170053, guid: ef19b7315c8928b428efda1d2d346342, type: 3}
   _skull: {fileID: 377415590441862655, guid: e8fd39b5352ad39408fa5b7781868868, type: 3}
   _enemy: {fileID: 1275360841057138}
